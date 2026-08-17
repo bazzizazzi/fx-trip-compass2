@@ -1,0 +1,17 @@
+{
+  "_comment": "Hand-curated, intentionally conservative. globalExclude = never suggested to any traveler right now (active war / extreme travel-advisory). hostilePairs = destination hidden specifically from travelers whose home country is the other side of the pair, and stays hidden even if a peace deal is signed later — normalization of travel sentiment lags political change by years, so this list is updated manually, not automatically.",
+  "globalExclude": ["UA", "RU", "SY", "YE", "AF", "SD", "SO", "ML", "MM"],
+  "hostilePairs": [
+    ["IL", "IR"],
+    ["IL", "SY"],
+    ["IL", "LB"],
+    ["IL", "YE"],
+    ["IL", "IQ"],
+    ["RU", "UA"],
+    ["AM", "AZ"],
+    ["IN", "PK"],
+    ["KR", "KP"],
+    ["SA", "YE"],
+    ["ET", "ER"]
+  ]
+}

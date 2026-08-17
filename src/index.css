@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Heebo:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Heebo", serif;
+  --font-sans: "Inter", "Heebo", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-ink: #16233b;
+  --color-ink-soft: #2c3b57;
+  --color-muted: #5c6b85;
+  --color-parchment: #f3ecda;
+  --color-parchment-deep: #e8dfc6;
+  --color-card: #fdfbf5;
+  --color-gold: #c89b3c;
+  --color-gold-deep: #a67c2e;
+  --color-emerald: #2f8f6b;
+  --color-emerald-soft: #e3f1ea;
+  --color-coral: #c8503f;
+  --color-coral-soft: #f7e6e2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  direction: rtl;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-deep);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

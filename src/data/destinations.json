@@ -1,0 +1,1580 @@
+[
+  {
+    "id": "d1",
+    "name": "בורטון און דה ווטר",
+    "nameEn": "Bourton-on-the-Water",
+    "country": "אנגליה",
+    "countryCode": "GB",
+    "currencyCode": "GBP",
+    "region": "Europe",
+    "lat": 51.88,
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9
+    ],
+    "avgDailyBudgetUSD": 95,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "כפר אבן על נהר רדוד, כינויו 'ונציה של הקוטסוולדס' — לא לונדון ולא מנצ'סטר.",
+    "tags": [
+      "כפרי",
+      "טבע"
+    ]
+  },
+  {
+    "id": "d2",
+    "name": "ראי",
+    "nameEn": "Rye",
+    "country": "אנגליה",
+    "countryCode": "GB",
+    "currencyCode": "GBP",
+    "region": "Europe",
+    "lat": 50.95,
+    "bestMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 100,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיירת נמל ימי-ביניימית עם רחובות אבן משופעים בדרום מזרח אנגליה.",
+    "tags": [
+      "כפרי",
+      "היסטוריה"
+    ]
+  },
+  {
+    "id": "d3",
+    "name": "קולמאר",
+    "nameEn": "Colmar",
+    "country": "צרפת",
+    "countryCode": "FR",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 48.08,
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10,
+      12
+    ],
+    "avgDailyBudgetUSD": 110,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "בתי עץ צבעוניים ותעלות — אלזס הכפרית, לא פריז.",
+    "tags": [
+      "כפרי",
+      "אדריכלות"
+    ]
+  },
+  {
+    "id": "d4",
+    "name": "אנסי",
+    "nameEn": "Annecy",
+    "country": "צרפת",
+    "countryCode": "FR",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 45.9,
+    "bestMonths": [
+      6,
+      7,
+      9
+    ],
+    "avgDailyBudgetUSD": 130,
+    "minStars": [
+      3,
+      4,
+      5
+    ],
+    "hiddenGem": true,
+    "description": "אגם טורקיז למרגלות האלפים, מכונה 'ונציה של האלפים'.",
+    "tags": [
+      "טבע",
+      "אגם"
+    ]
+  },
+  {
+    "id": "d5",
+    "name": "גורד",
+    "nameEn": "Gordes",
+    "country": "צרפת",
+    "countryCode": "FR",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 43.91,
+    "bestMonths": [
+      5,
+      6,
+      9
+    ],
+    "avgDailyBudgetUSD": 140,
+    "minStars": [
+      4,
+      5
+    ],
+    "hiddenGem": true,
+    "description": "כפר אבן על צוק בלב שדות הלבנדר של פרובאנס.",
+    "tags": [
+      "כפרי",
+      "טבע"
+    ]
+  },
+  {
+    "id": "d6",
+    "name": "אורביייטו",
+    "nameEn": "Orvieto",
+    "country": "איטליה",
+    "countryCode": "IT",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 42.72,
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 100,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיירה אטרוסקית על צוק טוף געשי באומבריה השקטה.",
+    "tags": [
+      "כפרי",
+      "היסטוריה"
+    ]
+  },
+  {
+    "id": "d7",
+    "name": "מטרה",
+    "nameEn": "Matera",
+    "country": "איטליה",
+    "countryCode": "IT",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 40.67,
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 90,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיר מערות בת 9000 שנה בדרום איטליה, פחות מוכרת מטוסקנה.",
+    "tags": [
+      "היסטוריה",
+      "ייחודי"
+    ]
+  },
+  {
+    "id": "d8",
+    "name": "צ'ינקווה טרה - ורנצה",
+    "nameEn": "Vernazza",
+    "country": "איטליה",
+    "countryCode": "IT",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 44.14,
+    "bestMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 120,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "הכפר הכי ציורי מבין חמשת כפרי החוף של הריביירה האיטלקית.",
+    "tags": [
+      "חופים",
+      "כפרי"
+    ]
+  },
+  {
+    "id": "d9",
+    "name": "אוביידוש",
+    "nameEn": "Óbidos",
+    "country": "פורטוגל",
+    "countryCode": "PT",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 39.36,
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 80,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיירה מוקפת חומה מימי הביניים, שעה מליסבון.",
+    "tags": [
+      "כפרי",
+      "היסטוריה"
+    ]
+  },
+  {
+    "id": "d10",
+    "name": "נזארה",
+    "nameEn": "Nazaré",
+    "country": "פורטוגל",
+    "countryCode": "PT",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 39.6,
+    "bestMonths": [
+      9,
+      10,
+      11
+    ],
+    "avgDailyBudgetUSD": 75,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "כפר דייגים עם גלי הענק המפורסמים בעולם, לא רק אלגרווה.",
+    "tags": [
+      "חופים",
+      "גלישה"
+    ]
+  },
+  {
+    "id": "d11",
+    "name": "נאפפליו",
+    "nameEn": "Nafplio",
+    "country": "יוון",
+    "countryCode": "GR",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 37.57,
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 90,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיר נמל ונציאנית בפלופונס, אלטרנטיבה שקטה לאיים.",
+    "tags": [
+      "כפרי",
+      "חופים"
+    ]
+  },
+  {
+    "id": "d12",
+    "name": "מטאורה",
+    "nameEn": "Meteora",
+    "country": "יוון",
+    "countryCode": "GR",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 39.72,
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 85,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "מנזרים על פסגות סלע ענקיות במרכז יוון.",
+    "tags": [
+      "טבע",
+      "היסטוריה"
+    ]
+  },
+  {
+    "id": "d13",
+    "name": "האלשטט",
+    "nameEn": "Hallstatt",
+    "country": "אוסטריה",
+    "countryCode": "AT",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 47.56,
+    "bestMonths": [
+      5,
+      6,
+      9
+    ],
+    "avgDailyBudgetUSD": 130,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "כפר אלפיני על אגם, אחד הנופים המצולמים באירופה.",
+    "tags": [
+      "טבע",
+      "אגם"
+    ]
+  },
+  {
+    "id": "d14",
+    "name": "צ'סקי קרומלוב",
+    "nameEn": "Český Krumlov",
+    "country": "צ'כיה",
+    "countryCode": "CZ",
+    "currencyCode": "CZK",
+    "region": "Europe",
+    "lat": 48.81,
+    "bestMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 65,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיירה מימי הביניים מוקפת בעיקול נהר, שעתיים מפראג.",
+    "tags": [
+      "כפרי",
+      "היסטוריה"
+    ]
+  },
+  {
+    "id": "d15",
+    "name": "סיגטו",
+    "nameEn": "Sighișoara",
+    "country": "רומניה",
+    "countryCode": "RO",
+    "currencyCode": "RON",
+    "region": "Europe",
+    "lat": 46.22,
+    "bestMonths": [
+      5,
+      6,
+      9
+    ],
+    "avgDailyBudgetUSD": 55,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיר מבוצרת עתיקה בטרנסילבניה, מולדת דרקולה האגדי.",
+    "tags": [
+      "היסטוריה",
+      "כפרי"
+    ]
+  },
+  {
+    "id": "d16",
+    "name": "קוטור",
+    "nameEn": "Kotor",
+    "country": "מונטנגרו",
+    "countryCode": "ME",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 42.42,
+    "bestMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 70,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "מפרץ פיורד ים תיכוני מוקף הרים, זול בהרבה מקרואטיה.",
+    "tags": [
+      "חופים",
+      "טבע"
+    ]
+  },
+  {
+    "id": "d17",
+    "name": "סיגנאגי",
+    "nameEn": "Sighnaghi",
+    "country": "גאורגיה",
+    "countryCode": "GE",
+    "currencyCode": "GEL",
+    "region": "Europe",
+    "lat": 41.62,
+    "bestMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 40,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "'עיר האהבה' בלב אזור היין קחתי, מרפסת אל עמק האלזני.",
+    "tags": [
+      "כפרי",
+      "יין"
+    ]
+  },
+  {
+    "id": "d18",
+    "name": "מסטיה",
+    "nameEn": "Mestia",
+    "country": "גאורגיה",
+    "countryCode": "GE",
+    "currencyCode": "GEL",
+    "region": "Europe",
+    "lat": 43.05,
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avgDailyBudgetUSD": 35,
+    "minStars": [
+      3
+    ],
+    "hiddenGem": true,
+    "description": "כפרי מגדלים עתיקים למרגלות ההרים הגבוהים בקווקז.",
+    "tags": [
+      "טבע",
+      "הרים"
+    ]
+  },
+  {
+    "id": "d19",
+    "name": "דיליג'אן",
+    "nameEn": "Dilijan",
+    "country": "ארמניה",
+    "countryCode": "AM",
+    "currencyCode": "AMD",
+    "region": "Europe",
+    "lat": 40.74,
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avgDailyBudgetUSD": 35,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "'שוויץ הקטנה' של ארמניה — יערות, מנזרים ומעיינות.",
+    "tags": [
+      "טבע",
+      "הרים"
+    ]
+  },
+  {
+    "id": "d20",
+    "name": "פלובדיב",
+    "nameEn": "Plovdiv",
+    "country": "בולגריה",
+    "countryCode": "BG",
+    "currencyCode": "BGN",
+    "region": "Europe",
+    "lat": 42.14,
+    "bestMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 45,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיר עתיקה על שבעה גבעות, אחת הישנות באירופה ועדיין לא תיירותית.",
+    "tags": [
+      "היסטוריה",
+      "כפרי"
+    ]
+  },
+  {
+    "id": "d21",
+    "name": "ברשוב",
+    "nameEn": "Brașov",
+    "country": "רומניה",
+    "countryCode": "RO",
+    "currencyCode": "RON",
+    "region": "Europe",
+    "lat": 45.65,
+    "bestMonths": [
+      5,
+      6,
+      9
+    ],
+    "avgDailyBudgetUSD": 55,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "שער הקרפטים, עיר סקסונית צבעונית עם טירת דרקולה סמוכה.",
+    "tags": [
+      "הרים",
+      "היסטוריה"
+    ]
+  },
+  {
+    "id": "d22",
+    "name": "טאקایאמה",
+    "nameEn": "Takayama",
+    "country": "יפן",
+    "countryCode": "JP",
+    "currencyCode": "JPY",
+    "region": "Asia",
+    "lat": 36.14,
+    "bestMonths": [
+      4,
+      5,
+      10,
+      11
+    ],
+    "avgDailyBudgetUSD": 100,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיירת הרים עם רחוב סמוראים משומר, לא קיוטו הצפופה.",
+    "tags": [
+      "כפרי",
+      "היסטוריה"
+    ]
+  },
+  {
+    "id": "d23",
+    "name": "קנזאווה",
+    "nameEn": "Kanazawa",
+    "country": "יפן",
+    "countryCode": "JP",
+    "currencyCode": "JPY",
+    "region": "Asia",
+    "lat": 36.56,
+    "bestMonths": [
+      4,
+      5,
+      10,
+      11
+    ],
+    "avgDailyBudgetUSD": 105,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "אחד מגני היפנים המושלמים בעולם ורובע גיישות שקט.",
+    "tags": [
+      "גנים",
+      "היסטוריה"
+    ]
+  },
+  {
+    "id": "d24",
+    "name": "נאושימה",
+    "nameEn": "Naoshima",
+    "country": "יפן",
+    "countryCode": "JP",
+    "currencyCode": "JPY",
+    "region": "Asia",
+    "lat": 34.46,
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 95,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "אי אמנות עם מוזיאונים תת קרקעיים, ים פנימי סטו.",
+    "tags": [
+      "אמנות",
+      "איים"
+    ]
+  },
+  {
+    "id": "d25",
+    "name": "הוי אן",
+    "nameEn": "Hội An",
+    "country": "וייטנאם",
+    "countryCode": "VN",
+    "currencyCode": "VND",
+    "region": "Asia",
+    "lat": 15.88,
+    "bestMonths": [
+      2,
+      3,
+      4,
+      8
+    ],
+    "avgDailyBudgetUSD": 35,
+    "minStars": [
+      3,
+      4,
+      5
+    ],
+    "hiddenGem": true,
+    "description": "עיר נמל עתיקה עם פנסי משי, לא הו צ'י מין הסואנת.",
+    "tags": [
+      "היסטוריה",
+      "חופים"
+    ]
+  },
+  {
+    "id": "d26",
+    "name": "נין בין",
+    "nameEn": "Ninh Bình",
+    "country": "וייטנאם",
+    "countryCode": "VN",
+    "currencyCode": "VND",
+    "region": "Asia",
+    "lat": 20.25,
+    "bestMonths": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "avgDailyBudgetUSD": 30,
+    "minStars": [
+      3
+    ],
+    "hiddenGem": true,
+    "description": "'הלונג ביי היבשתי' — נהרות בין צוקי גיר ושדות אורז.",
+    "tags": [
+      "טבע"
+    ]
+  },
+  {
+    "id": "d27",
+    "name": "לוּאָנְג פְּראבּאנג",
+    "nameEn": "Luang Prabang",
+    "country": "לאוס",
+    "countryCode": "LA",
+    "currencyCode": "LAK",
+    "region": "Asia",
+    "lat": 19.89,
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avgDailyBudgetUSD": 35,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיר מנזרים בודהיסטית על שפת המקונג, שקטה במיוחד.",
+    "tags": [
+      "היסטוריה",
+      "טבע"
+    ]
+  },
+  {
+    "id": "d28",
+    "name": "באטמבנג",
+    "nameEn": "Battambang",
+    "country": "קמבודיה",
+    "countryCode": "KH",
+    "currencyCode": "KHR",
+    "region": "Asia",
+    "lat": 13.1,
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avgDailyBudgetUSD": 25,
+    "minStars": [
+      3
+    ],
+    "hiddenGem": true,
+    "description": "אדריכלות קולוניאלית ורכבת הבמבוק, בלי הקהל של סיאם ריפ.",
+    "tags": [
+      "כפרי",
+      "היסטוריה"
+    ]
+  },
+  {
+    "id": "d29",
+    "name": "אובוד - סיידמנטריות",
+    "nameEn": "Sidemen",
+    "country": "אינדונזיה",
+    "countryCode": "ID",
+    "currencyCode": "IDR",
+    "region": "Asia",
+    "lat": -8.4,
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "avgDailyBudgetUSD": 30,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עמק אורז שקט בבאלי, מה שאובוד הייתה לפני עשור.",
+    "tags": [
+      "טבע",
+      "כפרי"
+    ]
+  },
+  {
+    "id": "d30",
+    "name": "פלורס - לברוברג'ו",
+    "nameEn": "Labuan Bajo",
+    "country": "אינדונזיה",
+    "countryCode": "ID",
+    "currencyCode": "IDR",
+    "region": "Asia",
+    "lat": -8.5,
+    "bestMonths": [
+      4,
+      5,
+      6,
+      10
+    ],
+    "avgDailyBudgetUSD": 45,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "שער לאיי קומודו ומפרצים תכולים, פחות מוכר מבאלי.",
+    "tags": [
+      "טבע",
+      "חופים"
+    ]
+  },
+  {
+    "id": "d31",
+    "name": "באטד",
+    "nameEn": "Batad",
+    "country": "פיליפינים",
+    "countryCode": "PH",
+    "currencyCode": "PHP",
+    "region": "Asia",
+    "lat": 16.85,
+    "bestMonths": [
+      2,
+      3,
+      4
+    ],
+    "avgDailyBudgetUSD": 25,
+    "minStars": [
+      2,
+      3
+    ],
+    "hiddenGem": true,
+    "description": "כפר מדרגות אורז UNESCO בהרי הקורדיירה.",
+    "tags": [
+      "טבע",
+      "כפרי"
+    ]
+  },
+  {
+    "id": "d32",
+    "name": "סיקיהוֹ",
+    "nameEn": "Siquijor",
+    "country": "פיליפינים",
+    "countryCode": "PH",
+    "currencyCode": "PHP",
+    "region": "Asia",
+    "lat": 9.19,
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "avgDailyBudgetUSD": 30,
+    "minStars": [
+      3
+    ],
+    "hiddenGem": true,
+    "description": "אי מיסטי עם מפלים ומים טורקיז, כמעט ולא מתויר.",
+    "tags": [
+      "חופים",
+      "איים"
+    ]
+  },
+  {
+    "id": "d33",
+    "name": "פונדיצ'רי",
+    "nameEn": "Pondicherry",
+    "country": "הודו",
+    "countryCode": "IN",
+    "currencyCode": "INR",
+    "region": "Asia",
+    "lat": 11.94,
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avgDailyBudgetUSD": 25,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "רבעים צרפתיים צבעוניים על חוף מפרץ בנגל, לא ניו דלהי.",
+    "tags": [
+      "כפרי",
+      "היסטוריה"
+    ]
+  },
+  {
+    "id": "d34",
+    "name": "הַמְפִּי",
+    "nameEn": "Hampi",
+    "country": "הודו",
+    "countryCode": "IN",
+    "currencyCode": "INR",
+    "region": "Asia",
+    "lat": 15.34,
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avgDailyBudgetUSD": 20,
+    "minStars": [
+      2,
+      3
+    ],
+    "hiddenGem": true,
+    "description": "חורבות ממלכת ויג'איאנגר בין נופי סלעים סוריאליים.",
+    "tags": [
+      "היסטוריה",
+      "טבע"
+    ]
+  },
+  {
+    "id": "d35",
+    "name": "גירת'קון",
+    "nameEn": "Elgol",
+    "country": "נפאל",
+    "countryCode": "NP",
+    "currencyCode": "NPR",
+    "region": "Asia",
+    "lat": 27.7,
+    "bestMonths": [
+      10,
+      11,
+      3,
+      4
+    ],
+    "avgDailyBudgetUSD": 25,
+    "minStars": [
+      2,
+      3
+    ],
+    "hiddenGem": true,
+    "description": "כפרי טרק בפוקהרה שאינם קטמנדו, נופי אנאפורנה.",
+    "tags": [
+      "הרים",
+      "טבע"
+    ]
+  },
+  {
+    "id": "d36",
+    "name": "שפשאוואן",
+    "nameEn": "Chefchaouen",
+    "country": "מרוקו",
+    "countryCode": "MA",
+    "currencyCode": "MAD",
+    "region": "Africa",
+    "lat": 35.17,
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 40,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "העיר הכחולה בהרי הריף, לגמרי לא מרקש.",
+    "tags": [
+      "כפרי",
+      "אדריכלות"
+    ]
+  },
+  {
+    "id": "d37",
+    "name": "אסאוירה",
+    "nameEn": "Essaouira",
+    "country": "מרוקו",
+    "countryCode": "MA",
+    "currencyCode": "MAD",
+    "region": "Africa",
+    "lat": 31.51,
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 45,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיר נמל רוחות על האטלנטי עם שוק אמנים רגוע.",
+    "tags": [
+      "חופים",
+      "כפרי"
+    ]
+  },
+  {
+    "id": "d38",
+    "name": "פטרה - ואדי מוסא",
+    "nameEn": "Wadi Musa",
+    "country": "ירדן",
+    "countryCode": "JO",
+    "currencyCode": "JOD",
+    "region": "Middle East",
+    "lat": 30.33,
+    "bestMonths": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "avgDailyBudgetUSD": 50,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "העיירה הקטנה שער הסלע האדום, לא רק עמאן.",
+    "tags": [
+      "היסטוריה",
+      "טבע"
+    ]
+  },
+  {
+    "id": "d39",
+    "name": "מטרוח",
+    "nameEn": "Marsa Matruh",
+    "country": "מצרים",
+    "countryCode": "EG",
+    "currencyCode": "EGP",
+    "region": "Africa",
+    "lat": 31.35,
+    "bestMonths": [
+      5,
+      6,
+      9
+    ],
+    "avgDailyBudgetUSD": 30,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "חופי חול לבן על התיכון המצרי, כמעט ריק מתיירים זרים.",
+    "tags": [
+      "חופים"
+    ]
+  },
+  {
+    "id": "d40",
+    "name": "סן מיגל דה איינדה",
+    "nameEn": "San Miguel de Allende",
+    "country": "מקסיקו",
+    "countryCode": "MX",
+    "currencyCode": "MXN",
+    "region": "Americas",
+    "lat": 20.91,
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avgDailyBudgetUSD": 45,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיירה קולוניאלית צבעונית ברמה המרכזית, שקטה מקנקון.",
+    "tags": [
+      "כפרי",
+      "אמנות"
+    ]
+  },
+  {
+    "id": "d41",
+    "name": "בקלר",
+    "nameEn": "Bacalar",
+    "country": "מקסיקו",
+    "countryCode": "MX",
+    "currencyCode": "MXN",
+    "region": "Americas",
+    "lat": 18.68,
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avgDailyBudgetUSD": 40,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "'אגם שבעת הצבעים' הקריבי, אלטרנטיבה רגועה לטולום.",
+    "tags": [
+      "טבע",
+      "אגם"
+    ]
+  },
+  {
+    "id": "d42",
+    "name": "סלנטו",
+    "nameEn": "Salento",
+    "country": "קולומביה",
+    "countryCode": "CO",
+    "currencyCode": "COP",
+    "region": "Americas",
+    "lat": 4.63,
+    "bestMonths": [
+      12,
+      1,
+      2,
+      7
+    ],
+    "avgDailyBudgetUSD": 30,
+    "minStars": [
+      2,
+      3
+    ],
+    "hiddenGem": true,
+    "description": "כפר קפה צבעוני בין עמקי דקלי השעווה הגבוהים בעולם.",
+    "tags": [
+      "כפרי",
+      "טבע"
+    ]
+  },
+  {
+    "id": "d43",
+    "name": "גואטפה",
+    "nameEn": "Guatapé",
+    "country": "קולומביה",
+    "countryCode": "CO",
+    "currencyCode": "COP",
+    "region": "Americas",
+    "lat": 6.23,
+    "bestMonths": [
+      12,
+      1,
+      2,
+      7
+    ],
+    "avgDailyBudgetUSD": 30,
+    "minStars": [
+      2,
+      3
+    ],
+    "hiddenGem": true,
+    "description": "כפר צבעוני על אגם מלאכותי עם סלע ענק לטיפוס, שעתיים ממדיין.",
+    "tags": [
+      "כפרי",
+      "אגם"
+    ]
+  },
+  {
+    "id": "d44",
+    "name": "אויאנטייטמבו",
+    "nameEn": "Ollantaytambo",
+    "country": "פרו",
+    "countryCode": "PE",
+    "currencyCode": "PEN",
+    "region": "Americas",
+    "lat": -13.26,
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "avgDailyBudgetUSD": 30,
+    "minStars": [
+      2,
+      3
+    ],
+    "hiddenGem": true,
+    "description": "כפר אינקה חי שעדיין בנוי על יסודות מקוריים, שער מאצ'ו פיצ'ו.",
+    "tags": [
+      "היסטוריה",
+      "הרים"
+    ]
+  },
+  {
+    "id": "d45",
+    "name": "ואצ'צ'ינה",
+    "nameEn": "Huacachina",
+    "country": "פרו",
+    "countryCode": "PE",
+    "currencyCode": "PEN",
+    "region": "Americas",
+    "lat": -14.09,
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "avgDailyBudgetUSD": 25,
+    "minStars": [
+      2,
+      3
+    ],
+    "hiddenGem": true,
+    "description": "נווה מדבר ירוק בלב דיונות ענק במדבר החוף.",
+    "tags": [
+      "טבע",
+      "ייחודי"
+    ]
+  },
+  {
+    "id": "d46",
+    "name": "קולוניה דל סקרמנטו",
+    "nameEn": "Colonia del Sacramento",
+    "country": "אורוגוואי",
+    "countryCode": "UY",
+    "currencyCode": "UYU",
+    "region": "Americas",
+    "lat": -34.47,
+    "bestMonths": [
+      10,
+      11,
+      3,
+      4
+    ],
+    "avgDailyBudgetUSD": 45,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיר נמל פורטוגזית-ספרדית עתיקה מול בואנוס איירס.",
+    "tags": [
+      "היסטוריה",
+      "כפרי"
+    ]
+  },
+  {
+    "id": "d47",
+    "name": "פוקון",
+    "nameEn": "Pucón",
+    "country": "צ'ילה",
+    "countryCode": "CL",
+    "currencyCode": "CLP",
+    "region": "Americas",
+    "lat": -39.28,
+    "bestMonths": [
+      12,
+      1,
+      2
+    ],
+    "avgDailyBudgetUSD": 40,
+    "minStars": [
+      3
+    ],
+    "hiddenGem": true,
+    "description": "עיירת הרפתקאות למרגלות הר געש פעיל ואגמים כחולים.",
+    "tags": [
+      "טבע",
+      "הרים"
+    ]
+  },
+  {
+    "id": "d48",
+    "name": "סוואקופמונד",
+    "nameEn": "Swakopmund",
+    "country": "נמיביה",
+    "countryCode": "NA",
+    "currencyCode": "NAD",
+    "region": "Africa",
+    "lat": -22.68,
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 40,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיירה קולוניאלית גרמנית בין מדבר נמיב לים הקר.",
+    "tags": [
+      "טבע",
+      "ייחודי"
+    ]
+  },
+  {
+    "id": "d49",
+    "name": "סטון טאון",
+    "nameEn": "Stone Town",
+    "country": "טנזניה",
+    "countryCode": "TZ",
+    "currencyCode": "TZS",
+    "region": "Africa",
+    "lat": -6.16,
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avgDailyBudgetUSD": 40,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": true,
+    "description": "עיר עתיקה תבלינים בזנזיבר, לפני החופים המוכרים.",
+    "tags": [
+      "היסטוריה",
+      "חופים"
+    ]
+  },
+  {
+    "id": "d50",
+    "name": "לאמו",
+    "nameEn": "Lamu",
+    "country": "קניה",
+    "countryCode": "KE",
+    "currencyCode": "KES",
+    "region": "Africa",
+    "lat": -2.27,
+    "bestMonths": [
+      7,
+      8,
+      9,
+      1,
+      2
+    ],
+    "avgDailyBudgetUSD": 35,
+    "minStars": [
+      3
+    ],
+    "hiddenGem": true,
+    "description": "אי סוואהילי ללא מכוניות, אחת הערים העתיקות המשומרות במזרח אפריקה.",
+    "tags": [
+      "חופים",
+      "היסטוריה"
+    ]
+  },
+  {
+    "id": "d51",
+    "name": "בנגקוק",
+    "nameEn": "Bangkok",
+    "country": "תאילנד",
+    "countryCode": "TH",
+    "currencyCode": "THB",
+    "region": "Asia",
+    "lat": 13.76,
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avgDailyBudgetUSD": 45,
+    "minStars": [
+      3,
+      4,
+      5
+    ],
+    "hiddenGem": false,
+    "description": "עיר בירה גדולה ותוססת — נקודת ייחוס למחירי דרום מזרח אסיה.",
+    "tags": [
+      "עיר גדולה"
+    ]
+  },
+  {
+    "id": "d52",
+    "name": "ליסבון",
+    "nameEn": "Lisbon",
+    "country": "פורטוגל",
+    "countryCode": "PT",
+    "currencyCode": "EUR",
+    "region": "Europe",
+    "lat": 38.72,
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 90,
+    "minStars": [
+      3,
+      4,
+      5
+    ],
+    "hiddenGem": false,
+    "description": "אחת הבירות הזולות באירופה המערבית, נקודת ייחוס.",
+    "tags": [
+      "עיר גדולה"
+    ]
+  },
+  {
+    "id": "d53",
+    "name": "בואנוס איירס",
+    "nameEn": "Buenos Aires",
+    "country": "ארגנטינה",
+    "countryCode": "AR",
+    "currencyCode": "ARS",
+    "region": "Americas",
+    "lat": -34.6,
+    "bestMonths": [
+      10,
+      11,
+      3,
+      4
+    ],
+    "avgDailyBudgetUSD": 35,
+    "minStars": [
+      3,
+      4,
+      5
+    ],
+    "hiddenGem": false,
+    "description": "בירה אירופאית בדרום אמריקה שהוזלה דרמטית עם המטבע.",
+    "tags": [
+      "עיר גדולה"
+    ]
+  },
+  {
+    "id": "d54",
+    "name": "איסטנבול",
+    "nameEn": "Istanbul",
+    "country": "טורקיה",
+    "countryCode": "TR",
+    "currencyCode": "TRY",
+    "region": "Europe",
+    "lat": 41.01,
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 40,
+    "minStars": [
+      3,
+      4,
+      5
+    ],
+    "hiddenGem": false,
+    "description": "עיר על שני יבשות, נקודת ייחוס למחירי המזרח התיכון-אירופה.",
+    "tags": [
+      "עיר גדולה"
+    ]
+  },
+  {
+    "id": "d55",
+    "name": "קייפטאון",
+    "nameEn": "Cape Town",
+    "country": "דרום אפריקה",
+    "countryCode": "ZA",
+    "currencyCode": "ZAR",
+    "region": "Africa",
+    "lat": -33.92,
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "avgDailyBudgetUSD": 45,
+    "minStars": [
+      3,
+      4,
+      5
+    ],
+    "hiddenGem": false,
+    "description": "בירת ים דרום אפריקאית, נקודת ייחוס יבשתית.",
+    "tags": [
+      "עיר גדולה"
+    ]
+  },
+  {
+    "id": "d56",
+    "name": "טביליסי",
+    "nameEn": "Tbilisi",
+    "country": "גאורגיה",
+    "countryCode": "GE",
+    "currencyCode": "GEL",
+    "region": "Europe",
+    "lat": 41.72,
+    "bestMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avgDailyBudgetUSD": 35,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": false,
+    "description": "בירת קווקוז זולה ותוססת, נקודת ייחוס לאזור.",
+    "tags": [
+      "עיר גדולה"
+    ]
+  },
+  {
+    "id": "d57",
+    "name": "קרקוב",
+    "nameEn": "Kraków",
+    "country": "פולין",
+    "countryCode": "PL",
+    "currencyCode": "PLN",
+    "region": "Europe",
+    "lat": 50.06,
+    "bestMonths": [
+      5,
+      6,
+      9
+    ],
+    "avgDailyBudgetUSD": 55,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": false,
+    "description": "בירה תרבותית מרכז אירופאית במחיר נגיש.",
+    "tags": [
+      "עיר גדולה"
+    ]
+  },
+  {
+    "id": "d58",
+    "name": "מקסיקו סיטי",
+    "nameEn": "Mexico City",
+    "country": "מקסיקו",
+    "countryCode": "MX",
+    "currencyCode": "MXN",
+    "region": "Americas",
+    "lat": 19.43,
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avgDailyBudgetUSD": 45,
+    "minStars": [
+      3,
+      4,
+      5
+    ],
+    "hiddenGem": false,
+    "description": "מטרופולין ענק בגובה רב, נקודת ייחוס למחירי מקסיקו.",
+    "tags": [
+      "עיר גדולה"
+    ]
+  },
+  {
+    "id": "d59",
+    "name": "קייב",
+    "nameEn": "Kyiv",
+    "country": "אוקראינה",
+    "countryCode": "UA",
+    "currencyCode": "UAH",
+    "region": "Europe",
+    "lat": 50.45,
+    "bestMonths": [
+      5,
+      6,
+      9
+    ],
+    "avgDailyBudgetUSD": 30,
+    "minStars": [
+      3,
+      4
+    ],
+    "hiddenGem": false,
+    "description": "לא מוצג כרגע כיעד מומלץ עקב מלחמה פעילה.",
+    "tags": [
+      "עיר גדולה"
+    ]
+  }
+]
