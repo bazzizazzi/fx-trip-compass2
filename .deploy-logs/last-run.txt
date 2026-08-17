@@ -1,3 +1,14 @@
-Wrangler requires at least Node.js v22.0.0. You are using v20.20.2. Please update your version of Node.js.
 
-Consider using a Node.js version manager such as https://volta.sh/ or https://github.com/nvm-sh/nvm.
+ ⛅️ wrangler 4.123.0
+────────────────────
+🌀 Building list of assets...
+✨ Read 6 files from the assets directory /home/runner/work/fx-trip-compass2/fx-trip-compass2/dist
+🌀 Starting asset upload...
+No updated asset files to upload. Proceeding with deployment...
+Total Upload: 0.31 KiB / gzip: 0.22 KiB
+Uploaded fx-trip-compass2 (2.38 sec)
+Deployed fx-trip-compass2 triggers (0.53 sec)
+  https://fx-trip-compass2.bazzizazzi.workers.dev
+Current Version ID: 95d73caf-88fa-4e96-b843-bfd14bc18e94
+
+Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
