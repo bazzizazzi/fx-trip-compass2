@@ -24,6 +24,13 @@
     "tags": [
       "כפרי",
       "טבע"
+    ],
+    "descriptionEn": "A stone village straddling a shallow river, nicknamed the 'Venice of the Cotswolds' — not London, not Manchester.",
+    "countryEn": "England",
+    "theme": "village",
+    "tagKeys": [
+      "village",
+      "nature"
     ]
   },
   {
@@ -51,6 +58,13 @@
     "tags": [
       "כפרי",
       "היסטוריה"
+    ],
+    "descriptionEn": "A medieval port town with sloping cobbled streets in the south-east of England.",
+    "countryEn": "England",
+    "theme": "coast",
+    "tagKeys": [
+      "village",
+      "history"
     ]
   },
   {
@@ -79,6 +93,13 @@
     "tags": [
       "כפרי",
       "אדריכלות"
+    ],
+    "descriptionEn": "Colourful half-timbered houses and canals — rural Alsace, not Paris.",
+    "countryEn": "France",
+    "theme": "village",
+    "tagKeys": [
+      "village",
+      "architecture"
     ]
   },
   {
@@ -106,6 +127,13 @@
     "tags": [
       "טבע",
       "אגם"
+    ],
+    "descriptionEn": "A turquoise lake at the foot of the Alps, nicknamed the 'Venice of the Alps'.",
+    "countryEn": "France",
+    "theme": "lake",
+    "tagKeys": [
+      "nature",
+      "lake"
     ]
   },
   {
@@ -132,6 +160,13 @@
     "tags": [
       "כפרי",
       "טבע"
+    ],
+    "descriptionEn": "A stone village perched on a cliff amid the lavender fields of Provence.",
+    "countryEn": "France",
+    "theme": "village",
+    "tagKeys": [
+      "village",
+      "nature"
     ]
   },
   {
@@ -159,6 +194,13 @@
     "tags": [
       "כפרי",
       "היסטוריה"
+    ],
+    "descriptionEn": "An Etruscan hill town on a volcanic tuff outcrop in quiet Umbria.",
+    "countryEn": "Italy",
+    "theme": "village",
+    "tagKeys": [
+      "village",
+      "history"
     ]
   },
   {
@@ -186,6 +228,13 @@
     "tags": [
       "היסטוריה",
       "ייחודי"
+    ],
+    "descriptionEn": "A 9,000-year-old cave city in southern Italy, far less crowded than Tuscany.",
+    "countryEn": "Italy",
+    "theme": "historic",
+    "tagKeys": [
+      "history",
+      "unique"
     ]
   },
   {
@@ -213,6 +262,13 @@
     "tags": [
       "חופים",
       "כפרי"
+    ],
+    "descriptionEn": "The most photogenic of the five Cinque Terre villages on the Italian Riviera.",
+    "countryEn": "Italy",
+    "theme": "coast",
+    "tagKeys": [
+      "beaches",
+      "village"
     ]
   },
   {
@@ -240,6 +296,13 @@
     "tags": [
       "כפרי",
       "היסטוריה"
+    ],
+    "descriptionEn": "A walled medieval town an hour from Lisbon.",
+    "countryEn": "Portugal",
+    "theme": "historic",
+    "tagKeys": [
+      "village",
+      "history"
     ]
   },
   {
@@ -266,6 +329,13 @@
     "tags": [
       "חופים",
       "גלישה"
+    ],
+    "descriptionEn": "A fishing village famous for the biggest waves on Earth, not just the Algarve.",
+    "countryEn": "Portugal",
+    "theme": "coast",
+    "tagKeys": [
+      "beaches",
+      "surfing"
     ]
   },
   {
@@ -293,6 +363,13 @@
     "tags": [
       "כפרי",
       "חופים"
+    ],
+    "descriptionEn": "A Venetian-built port town in the Peloponnese, a quiet alternative to the islands.",
+    "countryEn": "Greece",
+    "theme": "coast",
+    "tagKeys": [
+      "village",
+      "beaches"
     ]
   },
   {
@@ -320,6 +397,13 @@
     "tags": [
       "טבע",
       "היסטוריה"
+    ],
+    "descriptionEn": "Monasteries perched on giant rock pillars in central Greece.",
+    "countryEn": "Greece",
+    "theme": "mountain",
+    "tagKeys": [
+      "nature",
+      "history"
     ]
   },
   {
@@ -346,6 +430,13 @@
     "tags": [
       "טבע",
       "אגם"
+    ],
+    "descriptionEn": "An alpine lakeside village and one of the most photographed views in Europe.",
+    "countryEn": "Austria",
+    "theme": "lake",
+    "tagKeys": [
+      "nature",
+      "lake"
     ]
   },
   {
@@ -373,6 +464,13 @@
     "tags": [
       "כפרי",
       "היסטוריה"
+    ],
+    "descriptionEn": "A medieval town wrapped in a river bend, two hours from Prague.",
+    "countryEn": "Czechia",
+    "theme": "village",
+    "tagKeys": [
+      "village",
+      "history"
     ]
   },
   {
@@ -399,6 +497,13 @@
     "tags": [
       "היסטוריה",
       "כפרי"
+    ],
+    "descriptionEn": "A fortified old town in Transylvania, legendary birthplace of Dracula.",
+    "countryEn": "Romania",
+    "theme": "historic",
+    "tagKeys": [
+      "history",
+      "village"
     ]
   },
   {
@@ -426,6 +531,13 @@
     "tags": [
       "חופים",
       "טבע"
+    ],
+    "descriptionEn": "A fjord-like Adriatic bay ringed by mountains, far cheaper than Croatia.",
+    "countryEn": "Montenegro",
+    "theme": "coast",
+    "tagKeys": [
+      "beaches",
+      "nature"
     ]
   },
   {
@@ -453,6 +565,13 @@
     "tags": [
       "כפרי",
       "יין"
+    ],
+    "descriptionEn": "The 'city of love' in Georgia's Kakheti wine region, overlooking the Alazani valley.",
+    "countryEn": "Georgia",
+    "theme": "village",
+    "tagKeys": [
+      "village",
+      "wine"
     ]
   },
   {
@@ -479,6 +598,13 @@
     "tags": [
       "טבע",
       "הרים"
+    ],
+    "descriptionEn": "Ancient defensive towers below the highest peaks of the Caucasus.",
+    "countryEn": "Georgia",
+    "theme": "mountain",
+    "tagKeys": [
+      "nature",
+      "mountains"
     ]
   },
   {
@@ -506,6 +632,13 @@
     "tags": [
       "טבע",
       "הרים"
+    ],
+    "descriptionEn": "Armenia's 'Little Switzerland' — forests, monasteries, and mineral springs.",
+    "countryEn": "Armenia",
+    "theme": "mountain",
+    "tagKeys": [
+      "nature",
+      "mountains"
     ]
   },
   {
@@ -533,6 +666,13 @@
     "tags": [
       "היסטוריה",
       "כפרי"
+    ],
+    "descriptionEn": "A city on seven hills, one of Europe's oldest, still barely touristed.",
+    "countryEn": "Bulgaria",
+    "theme": "historic",
+    "tagKeys": [
+      "history",
+      "village"
     ]
   },
   {
@@ -559,6 +699,13 @@
     "tags": [
       "הרים",
       "היסטוריה"
+    ],
+    "descriptionEn": "Gateway to the Carpathians, a colourful Saxon town near Dracula's castle.",
+    "countryEn": "Romania",
+    "theme": "mountain",
+    "tagKeys": [
+      "mountains",
+      "history"
     ]
   },
   {
@@ -586,6 +733,13 @@
     "tags": [
       "כפרי",
       "היסטוריה"
+    ],
+    "descriptionEn": "A mountain town with a preserved samurai quarter, not crowded Kyoto.",
+    "countryEn": "Japan",
+    "theme": "village",
+    "tagKeys": [
+      "village",
+      "history"
     ]
   },
   {
@@ -613,6 +767,13 @@
     "tags": [
       "גנים",
       "היסטוריה"
+    ],
+    "descriptionEn": "One of the world's most perfect Japanese gardens plus a quiet geisha district.",
+    "countryEn": "Japan",
+    "theme": "historic",
+    "tagKeys": [
+      "gardens",
+      "history"
     ]
   },
   {
@@ -640,6 +801,13 @@
     "tags": [
       "אמנות",
       "איים"
+    ],
+    "descriptionEn": "An art island with underground museums in Japan's Seto Inland Sea.",
+    "countryEn": "Japan",
+    "theme": "island",
+    "tagKeys": [
+      "art",
+      "islands"
     ]
   },
   {
@@ -668,6 +836,13 @@
     "tags": [
       "היסטוריה",
       "חופים"
+    ],
+    "descriptionEn": "An old lantern-lit trading port, not chaotic Ho Chi Minh City.",
+    "countryEn": "Vietnam",
+    "theme": "historic",
+    "tagKeys": [
+      "history",
+      "beaches"
     ]
   },
   {
@@ -693,6 +868,12 @@
     "description": "'הלונג ביי היבשתי' — נהרות בין צוקי גיר ושדות אורז.",
     "tags": [
       "טבע"
+    ],
+    "descriptionEn": "The 'inland Ha Long Bay' — rivers threading between limestone cliffs and rice fields.",
+    "countryEn": "Vietnam",
+    "theme": "mountain",
+    "tagKeys": [
+      "nature"
     ]
   },
   {
@@ -720,6 +901,13 @@
     "tags": [
       "היסטוריה",
       "טבע"
+    ],
+    "descriptionEn": "A Buddhist monastery town on the Mekong, unusually calm.",
+    "countryEn": "Laos",
+    "theme": "historic",
+    "tagKeys": [
+      "history",
+      "nature"
     ]
   },
   {
@@ -746,6 +934,13 @@
     "tags": [
       "כפרי",
       "היסטוריה"
+    ],
+    "descriptionEn": "Colonial architecture and the bamboo railway, without Siem Reap's crowds.",
+    "countryEn": "Cambodia",
+    "theme": "village",
+    "tagKeys": [
+      "village",
+      "history"
     ]
   },
   {
@@ -773,6 +968,13 @@
     "tags": [
       "טבע",
       "כפרי"
+    ],
+    "descriptionEn": "A quiet Bali rice valley — what Ubud looked like a decade ago.",
+    "countryEn": "Indonesia",
+    "theme": "village",
+    "tagKeys": [
+      "nature",
+      "village"
     ]
   },
   {
@@ -800,6 +1002,13 @@
     "tags": [
       "טבע",
       "חופים"
+    ],
+    "descriptionEn": "Gateway to Komodo Island and turquoise bays, far less known than Bali.",
+    "countryEn": "Indonesia",
+    "theme": "coast",
+    "tagKeys": [
+      "nature",
+      "beaches"
     ]
   },
   {
@@ -826,6 +1035,13 @@
     "tags": [
       "טבע",
       "כפרי"
+    ],
+    "descriptionEn": "A UNESCO rice-terrace village in the Cordillera mountains.",
+    "countryEn": "Philippines",
+    "theme": "mountain",
+    "tagKeys": [
+      "nature",
+      "village"
     ]
   },
   {
@@ -852,6 +1068,13 @@
     "tags": [
       "חופים",
       "איים"
+    ],
+    "descriptionEn": "A mystic island with waterfalls and turquoise water, barely touristed.",
+    "countryEn": "Philippines",
+    "theme": "island",
+    "tagKeys": [
+      "beaches",
+      "islands"
     ]
   },
   {
@@ -879,6 +1102,13 @@
     "tags": [
       "כפרי",
       "היסטוריה"
+    ],
+    "descriptionEn": "Colourful French quarters on the Bay of Bengal, not New Delhi.",
+    "countryEn": "India",
+    "theme": "coast",
+    "tagKeys": [
+      "village",
+      "history"
     ]
   },
   {
@@ -906,6 +1136,13 @@
     "tags": [
       "היסטוריה",
       "טבע"
+    ],
+    "descriptionEn": "Ruins of the Vijayanagara empire amid surreal boulder landscapes.",
+    "countryEn": "India",
+    "theme": "historic",
+    "tagKeys": [
+      "history",
+      "nature"
     ]
   },
   {
@@ -933,6 +1170,13 @@
     "tags": [
       "הרים",
       "טבע"
+    ],
+    "descriptionEn": "Trekking villages around Pokhara that aren't Kathmandu, with Annapurna views.",
+    "countryEn": "Nepal",
+    "theme": "mountain",
+    "tagKeys": [
+      "mountains",
+      "nature"
     ]
   },
   {
@@ -960,6 +1204,13 @@
     "tags": [
       "כפרי",
       "אדריכלות"
+    ],
+    "descriptionEn": "The blue city in the Rif mountains, entirely unlike Marrakesh.",
+    "countryEn": "Morocco",
+    "theme": "village",
+    "tagKeys": [
+      "village",
+      "architecture"
     ]
   },
   {
@@ -987,6 +1238,13 @@
     "tags": [
       "חופים",
       "כפרי"
+    ],
+    "descriptionEn": "A windswept Atlantic port town with a relaxed artists' market.",
+    "countryEn": "Morocco",
+    "theme": "coast",
+    "tagKeys": [
+      "beaches",
+      "village"
     ]
   },
   {
@@ -1014,6 +1272,13 @@
     "tags": [
       "היסטוריה",
       "טבע"
+    ],
+    "descriptionEn": "The small town gateway to Petra's red rock, not just Amman.",
+    "countryEn": "Jordan",
+    "theme": "desert",
+    "tagKeys": [
+      "history",
+      "nature"
     ]
   },
   {
@@ -1039,6 +1304,12 @@
     "description": "חופי חול לבן על התיכון המצרי, כמעט ריק מתיירים זרים.",
     "tags": [
       "חופים"
+    ],
+    "descriptionEn": "White-sand Mediterranean beaches, almost empty of foreign tourists.",
+    "countryEn": "Egypt",
+    "theme": "coast",
+    "tagKeys": [
+      "beaches"
     ]
   },
   {
@@ -1067,6 +1338,13 @@
     "tags": [
       "כפרי",
       "אמנות"
+    ],
+    "descriptionEn": "A colourful colonial town on the central plateau, calmer than Cancún.",
+    "countryEn": "Mexico",
+    "theme": "village",
+    "tagKeys": [
+      "village",
+      "art"
     ]
   },
   {
@@ -1094,6 +1372,13 @@
     "tags": [
       "טבע",
       "אגם"
+    ],
+    "descriptionEn": "The 'lagoon of seven colours' — a calm Caribbean alternative to Tulum.",
+    "countryEn": "Mexico",
+    "theme": "lake",
+    "tagKeys": [
+      "nature",
+      "lake"
     ]
   },
   {
@@ -1121,6 +1406,13 @@
     "tags": [
       "כפרי",
       "טבע"
+    ],
+    "descriptionEn": "A colourful coffee village among the world's tallest wax palm valleys.",
+    "countryEn": "Colombia",
+    "theme": "village",
+    "tagKeys": [
+      "village",
+      "nature"
     ]
   },
   {
@@ -1148,6 +1440,13 @@
     "tags": [
       "כפרי",
       "אגם"
+    ],
+    "descriptionEn": "A colourful village on a man-made lake with a giant climbable rock, two hours from Medellín.",
+    "countryEn": "Colombia",
+    "theme": "lake",
+    "tagKeys": [
+      "village",
+      "lake"
     ]
   },
   {
@@ -1175,6 +1474,13 @@
     "tags": [
       "היסטוריה",
       "הרים"
+    ],
+    "descriptionEn": "A living Inca village still built on its original foundations, gateway to Machu Picchu.",
+    "countryEn": "Peru",
+    "theme": "mountain",
+    "tagKeys": [
+      "history",
+      "mountains"
     ]
   },
   {
@@ -1202,6 +1508,13 @@
     "tags": [
       "טבע",
       "ייחודי"
+    ],
+    "descriptionEn": "A green oasis ringed by giant sand dunes in the coastal desert.",
+    "countryEn": "Peru",
+    "theme": "desert",
+    "tagKeys": [
+      "nature",
+      "unique"
     ]
   },
   {
@@ -1229,6 +1542,13 @@
     "tags": [
       "היסטוריה",
       "כפרי"
+    ],
+    "descriptionEn": "An old Portuguese-Spanish port town across the water from Buenos Aires.",
+    "countryEn": "Uruguay",
+    "theme": "historic",
+    "tagKeys": [
+      "history",
+      "village"
     ]
   },
   {
@@ -1254,6 +1574,13 @@
     "tags": [
       "טבע",
       "הרים"
+    ],
+    "descriptionEn": "An adventure town at the foot of an active volcano and blue lakes.",
+    "countryEn": "Chile",
+    "theme": "mountain",
+    "tagKeys": [
+      "nature",
+      "mountains"
     ]
   },
   {
@@ -1282,6 +1609,13 @@
     "tags": [
       "טבע",
       "ייחודי"
+    ],
+    "descriptionEn": "A German colonial town between the Namib desert and the cold Atlantic.",
+    "countryEn": "Namibia",
+    "theme": "desert",
+    "tagKeys": [
+      "nature",
+      "unique"
     ]
   },
   {
@@ -1309,6 +1643,13 @@
     "tags": [
       "היסטוריה",
       "חופים"
+    ],
+    "descriptionEn": "Zanzibar's spice-trade old town, ahead of the well-known beaches.",
+    "countryEn": "Tanzania",
+    "theme": "historic",
+    "tagKeys": [
+      "history",
+      "beaches"
     ]
   },
   {
@@ -1336,6 +1677,13 @@
     "tags": [
       "חופים",
       "היסטוריה"
+    ],
+    "descriptionEn": "A car-free Swahili island, one of East Africa's best-preserved old towns.",
+    "countryEn": "Kenya",
+    "theme": "island",
+    "tagKeys": [
+      "beaches",
+      "history"
     ]
   },
   {
@@ -1363,6 +1711,12 @@
     "description": "עיר בירה גדולה ותוססת — נקודת ייחוס למחירי דרום מזרח אסיה.",
     "tags": [
       "עיר גדולה"
+    ],
+    "descriptionEn": "A huge, vibrant capital — a useful price reference point for Southeast Asia.",
+    "countryEn": "Thailand",
+    "theme": "city",
+    "tagKeys": [
+      "bigcity"
     ]
   },
   {
@@ -1390,6 +1744,12 @@
     "description": "אחת הבירות הזולות באירופה המערבית, נקודת ייחוס.",
     "tags": [
       "עיר גדולה"
+    ],
+    "descriptionEn": "One of Western Europe's cheapest capitals, a solid reference point.",
+    "countryEn": "Portugal",
+    "theme": "city",
+    "tagKeys": [
+      "bigcity"
     ]
   },
   {
@@ -1417,6 +1777,12 @@
     "description": "בירה אירופאית בדרום אמריקה שהוזלה דרמטית עם המטבע.",
     "tags": [
       "עיר גדולה"
+    ],
+    "descriptionEn": "A European-feeling capital in South America, dramatically cheaper with the currency move.",
+    "countryEn": "Argentina",
+    "theme": "city",
+    "tagKeys": [
+      "bigcity"
     ]
   },
   {
@@ -1444,6 +1810,12 @@
     "description": "עיר על שני יבשות, נקודת ייחוס למחירי המזרח התיכון-אירופה.",
     "tags": [
       "עיר גדולה"
+    ],
+    "descriptionEn": "A city on two continents, a price reference point for the Middle East-Europe corridor.",
+    "countryEn": "Turkey",
+    "theme": "city",
+    "tagKeys": [
+      "bigcity"
     ]
   },
   {
@@ -1471,6 +1843,12 @@
     "description": "בירת ים דרום אפריקאית, נקודת ייחוס יבשתית.",
     "tags": [
       "עיר גדולה"
+    ],
+    "descriptionEn": "South Africa's coastal capital, a continental reference point.",
+    "countryEn": "South Africa",
+    "theme": "coast",
+    "tagKeys": [
+      "bigcity"
     ]
   },
   {
@@ -1497,6 +1875,12 @@
     "description": "בירת קווקוז זולה ותוססת, נקודת ייחוס לאזור.",
     "tags": [
       "עיר גדולה"
+    ],
+    "descriptionEn": "A cheap, lively Caucasus capital, a regional reference point.",
+    "countryEn": "Georgia",
+    "theme": "city",
+    "tagKeys": [
+      "bigcity"
     ]
   },
   {
@@ -1522,6 +1906,12 @@
     "description": "בירה תרבותית מרכז אירופאית במחיר נגיש.",
     "tags": [
       "עיר גדולה"
+    ],
+    "descriptionEn": "A Central European cultural capital at an accessible price.",
+    "countryEn": "Poland",
+    "theme": "city",
+    "tagKeys": [
+      "bigcity"
     ]
   },
   {
@@ -1550,6 +1940,12 @@
     "description": "מטרופולין ענק בגובה רב, נקודת ייחוס למחירי מקסיקו.",
     "tags": [
       "עיר גדולה"
+    ],
+    "descriptionEn": "A huge high-altitude metropolis, a reference point for Mexico prices.",
+    "countryEn": "Mexico",
+    "theme": "city",
+    "tagKeys": [
+      "bigcity"
     ]
   },
   {
@@ -1575,6 +1971,12 @@
     "description": "לא מוצג כרגע כיעד מומלץ עקב מלחמה פעילה.",
     "tags": [
       "עיר גדולה"
+    ],
+    "descriptionEn": "Not currently shown as a recommended destination due to active war.",
+    "countryEn": "Ukraine",
+    "theme": "city",
+    "tagKeys": [
+      "bigcity"
     ]
   }
 ]

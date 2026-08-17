@@ -28,7 +28,7 @@ body {
   background-color: var(--color-parchment);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  direction: rtl;
+  /* direction comes from <html dir="ltr|rtl">, set by the language switcher - never hardcode it here */
 }
 
 .font-display {

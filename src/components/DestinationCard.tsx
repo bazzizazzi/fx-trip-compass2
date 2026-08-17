@@ -1,88 +1,104 @@
-import { Compass, Sparkles, ExternalLink } from "lucide-react";
+import { Sparkles, ExternalLink, TrendingUp, TrendingDown } from "lucide-react";
 import type { Destination } from "../lib/destinations";
-import { usdToHome, formatAmount, fxMovementPct, getCurrency } from "../lib/fx";
-import { dateRangeForMonth, MONTH_NAMES_HE } from "../lib/months";
+import { usdToHome, formatAmount, fxMovementPct, getCurrencyMeta } from "../lib/fx";
+import { dateRangeForMonth } from "../lib/months";
+import { useI18n } from "../lib/i18n";
 import FxMeter from "./FxMeter";
+import DestinationArt from "./DestinationArt";
 
 type Props = {
   dest: Destination;
   homeCurrency: string;
+  currentRates: Record<string, number>;
+  pastRates?: Record<string, number>;
   days: number;
   month: number;
   minStars: number;
-  movementPeriod?: "1y" | "5y";
+  showMovement: boolean;
 };
 
-export default function DestinationCard({ dest, homeCurrency, days, month, minStars, movementPeriod }: Props) {
-  const home = getCurrency(homeCurrency);
+export default function DestinationCard({ dest, homeCurrency, currentRates, pastRates, days, month, minStars, showMovement }: Props) {
+  const { t, lang } = useI18n();
+  const home = getCurrencyMeta(homeCurrency);
   const totalUsd = dest.avgDailyBudgetUSD * days;
-  const totalHome = usdToHome(totalUsd, homeCurrency);
+  const totalHome = usdToHome(currentRates, totalUsd, homeCurrency);
   const monthMatch = dest.bestMonths.includes(month);
-  const pct1y = fxMovementPct(homeCurrency, dest.currencyCode, "1y");
-  const pct5y = fxMovementPct(homeCurrency, dest.currencyCode, "5y");
-  const shownPct = movementPeriod === "5y" ? pct5y : pct1y;
+  const movementPct = pastRates ? fxMovementPct(currentRates, pastRates, homeCurrency, dest.currencyCode) : null;
 
   const { checkin, checkout } = dateRangeForMonth(month, days);
   const bookingUrl = `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(
-    dest.nameEn + ", " + dest.country
+    dest.nameEn + ", " + dest.countryEn
   )}&checkin=${checkin}&checkout=${checkout}&group_adults=2&no_rooms=1&nflt=class%3D${minStars}`;
 
+  const name = lang === "he" ? dest.name : dest.nameEn;
+  const country = lang === "he" ? dest.country : (t.countries[dest.countryCode] ?? dest.countryEn);
+  const description = lang === "he" ? dest.description : dest.descriptionEn;
+  const monthName = t.months[month - 1];
+
   return (
-    <article className="bg-card border border-ink/10 rounded-2xl p-5 flex flex-col gap-4 hover:border-gold-deep/50 hover:shadow-[0_4px_24px_-8px_rgba(22,35,59,0.18)] transition-all">
-      <div className="flex items-start justify-between gap-3">
-        <div>
-          <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="font-display text-xl font-semibold text-ink">{dest.name}</h3>
-            {dest.hiddenGem && (
-              <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-gold/15 text-gold-deep">
-                <Sparkles size={11} /> פינה נסתרת
-              </span>
-            )}
-          </div>
-          <p className="text-sm text-muted mt-0.5">{dest.country} · {dest.currencyCode}</p>
+    <article className="group bg-card border border-ink/10 rounded-2xl overflow-hidden flex flex-col hover:shadow-[0_8px_30px_-10px_rgba(22,35,59,0.25)] hover:-translate-y-0.5 transition-all duration-200">
+      <div className="relative h-36 overflow-hidden">
+        <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-300">
+          <DestinationArt theme={dest.theme} seed={dest.id} />
         </div>
+        {dest.hiddenGem && (
+          <span className="absolute top-3 start-3 inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-card/95 text-gold-deep shadow-sm backdrop-blur-sm">
+            <Sparkles size={11} /> {t.hiddenGemBadge}
+          </span>
+        )}
         {monthMatch && (
-          <span className="text-[11px] font-semibold px-2 py-1 rounded-full bg-emerald-soft text-emerald whitespace-nowrap">
-            עונה מומלצת ב{MONTH_NAMES_HE[month - 1]}
+          <span className="absolute top-3 end-3 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-emerald text-white shadow-sm">
+            {t.seasonBadge(monthName)}
           </span>
         )}
       </div>
 
-      <p className="text-sm text-ink-soft leading-relaxed">{dest.description}</p>
-
-      <div className="flex flex-wrap gap-1.5">
-        {dest.tags.map((t) => (
-          <span key={t} className="text-[11px] px-2 py-0.5 rounded-full bg-ink/5 text-muted">{t}</span>
-        ))}
-      </div>
-
-      <div className="border-t border-ink/10 pt-3 space-y-2">
-        <div className="flex items-baseline justify-between">
-          <span className="text-xs text-muted">הערכה ל-{days} ימים (בלי טיסות)</span>
-          <span className="font-mono-num text-lg font-semibold text-ink">
-            {home.symbol}{formatAmount(totalHome, homeCurrency)}
-          </span>
+      <div className="p-5 flex flex-col gap-3 flex-1">
+        <div>
+          <h3 className="font-display text-xl font-semibold text-ink leading-tight">{name}</h3>
+          <p className="text-sm text-muted mt-0.5">{country} · {dest.currencyCode}</p>
         </div>
 
-        <div>
-          <div className="flex items-center justify-between text-xs mb-1">
-            <span className="flex items-center gap-1 text-muted"><Compass size={12} /> תזוזת שער {movementPeriod === "5y" ? "ב-5 שנים" : "בשנה"}</span>
-            <span className={`font-mono-num font-semibold ${shownPct >= 0 ? "text-emerald" : "text-coral"}`}>
-              {shownPct >= 0 ? "+" : ""}{shownPct.toFixed(1)}%
+        <p className="text-sm text-ink-soft leading-relaxed">{description}</p>
+
+        <div className="flex flex-wrap gap-1.5">
+          {dest.tagKeys.map((tk) => (
+            <span key={tk} className="text-[11px] px-2 py-0.5 rounded-full bg-ink/5 text-muted">{t.tags[tk]}</span>
+          ))}
+        </div>
+
+        <div className="border-t border-ink/10 pt-3 mt-auto space-y-2">
+          <div className="flex items-baseline justify-between">
+            <span className="text-xs text-muted">{t.estimateLabel(days)}</span>
+            <span className="font-mono-num text-lg font-semibold text-ink">
+              {home.symbol}{formatAmount(totalHome, homeCurrency)}
             </span>
           </div>
-          <FxMeter pct={shownPct} />
-        </div>
-      </div>
 
-      <a
-        href={bookingUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-1 inline-flex items-center justify-center gap-1.5 text-[15px] font-bold px-4 py-3 rounded-xl bg-ink text-parchment hover:bg-gold-deep hover:text-ink transition-colors shadow-[0_2px_10px_-4px_rgba(22,35,59,0.4)]"
-      >
-        חפש מלונות ({"★".repeat(minStars)}+) ל-{checkin.slice(5)} <ExternalLink size={14} />
-      </a>
+          {showMovement && movementPct != null && (
+            <div>
+              <div className="flex items-center justify-between text-xs mb-1">
+                <span className="flex items-center gap-1 text-muted">
+                  {movementPct >= 0 ? <TrendingUp size={12} /> : <TrendingDown size={12} />} {t.fxMoveLabel}
+                </span>
+                <span className={`font-mono-num font-semibold ${movementPct >= 0 ? "text-emerald" : "text-coral"}`}>
+                  {movementPct >= 0 ? "+" : ""}{movementPct.toFixed(1)}%
+                </span>
+              </div>
+              <FxMeter pct={movementPct} />
+            </div>
+          )}
+        </div>
+
+        <a
+          href={bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-1 inline-flex items-center justify-center gap-1.5 text-[15px] font-bold px-4 py-3 rounded-xl bg-ink text-parchment hover:bg-gold-deep hover:text-ink transition-colors shadow-[0_2px_10px_-4px_rgba(22,35,59,0.4)]"
+        >
+          {t.searchHotelsLabel("★".repeat(minStars))} <ExternalLink size={14} />
+        </a>
+      </div>
     </article>
   );
 }

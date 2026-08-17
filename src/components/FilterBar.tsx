@@ -1,4 +1,4 @@
-import { MONTH_NAMES_HE } from "../lib/months";
+import { useI18n } from "../lib/i18n";
 
 export type Filters = {
   month: number;
@@ -15,26 +15,27 @@ type Props = {
 };
 
 export default function FilterBar({ filters, onChange, homeCurrencySymbol }: Props) {
+  const { t } = useI18n();
   const set = <K extends keyof Filters>(key: K, value: Filters[K]) =>
     onChange({ ...filters, [key]: value });
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4 bg-card border border-ink/10 rounded-2xl p-5">
       <div>
-        <label className="block text-xs font-semibold text-muted mb-1.5">חודש הנסיעה</label>
+        <label className="block text-xs font-semibold text-muted mb-1.5">{t.filterMonth}</label>
         <select
           value={filters.month}
           onChange={(e) => set("month", Number(e.target.value))}
           className="w-full bg-parchment border border-ink/15 rounded-lg px-3 py-2 text-sm"
         >
-          {MONTH_NAMES_HE.map((m, i) => (
+          {t.months.map((m, i) => (
             <option key={m} value={i + 1}>{m}</option>
           ))}
         </select>
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-muted mb-1.5">משך הטיול (ימים)</label>
+        <label className="block text-xs font-semibold text-muted mb-1.5">{t.filterDays}</label>
         <input
           type="number"
           min={2}
@@ -47,11 +48,11 @@ export default function FilterBar({ filters, onChange, homeCurrencySymbol }: Pro
 
       <div>
         <label className="block text-xs font-semibold text-muted mb-1.5">
-          תקציב מקסימלי לכל הטיול ({homeCurrencySymbol})
+          {t.filterBudget} ({homeCurrencySymbol})
         </label>
         <input
           type="number"
-          placeholder="ללא הגבלה"
+          placeholder={t.filterBudgetPlaceholder}
           value={filters.maxBudgetHome ?? ""}
           onChange={(e) => set("maxBudgetHome", e.target.value ? Number(e.target.value) : null)}
           className="w-full bg-parchment border border-ink/15 rounded-lg px-3 py-2 text-sm font-mono-num"
@@ -59,7 +60,7 @@ export default function FilterBar({ filters, onChange, homeCurrencySymbol }: Pro
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-muted mb-1.5">מינימום כוכבים למלון</label>
+        <label className="block text-xs font-semibold text-muted mb-1.5">{t.filterMinStars}</label>
         <select
           value={filters.minStars}
           onChange={(e) => set("minStars", Number(e.target.value))}
@@ -79,7 +80,7 @@ export default function FilterBar({ filters, onChange, homeCurrencySymbol }: Pro
             onChange={(e) => set("hiddenGemsOnly", e.target.checked)}
             className="w-4 h-4 accent-gold-deep"
           />
-          פינות נסתרות בלבד
+          {t.filterHiddenGemsOnly}
         </label>
       </div>
     </div>
