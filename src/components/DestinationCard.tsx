@@ -1,8 +1,9 @@
-import { Sparkles, ExternalLink, TrendingUp, TrendingDown } from "lucide-react";
+import { Sparkles, ExternalLink, TrendingUp, TrendingDown, Plane } from "lucide-react";
 import type { Destination } from "../lib/destinations";
 import { usdToHome, formatAmount, fxMovementPct, getCurrencyMeta } from "../lib/fx";
 import { dateRangeForMonth } from "../lib/months";
 import { useI18n } from "../lib/i18n";
+import { generateClickId, buildTripComUrl } from "../lib/affiliateTracking";
 import FxMeter from "./FxMeter";
 import DestinationArt from "./DestinationArt";
 
@@ -30,6 +31,7 @@ export default function DestinationCard({ dest, homeCurrency, currentRates, past
   const bookingUrl = `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(
     dest.nameEn + ", " + dest.countryEn
   )}&checkin=${checkin}&checkout=${checkout}&group_adults=2&no_rooms=1&nflt=class%3D${minStars}`;
+  const flightsUrl = buildTripComUrl(dest.nameEn, generateClickId());
 
   const name = lang === "he" ? dest.name : dest.nameEn;
   const country = lang === "he" ? dest.country : (t.countries[dest.countryCode] ?? dest.countryEn);
@@ -105,6 +107,14 @@ export default function DestinationCard({ dest, homeCurrency, currentRates, past
           className="mt-1 inline-flex items-center justify-center gap-1.5 text-[15px] font-bold px-4 py-3 rounded-xl bg-ink text-parchment hover:bg-gold-deep hover:text-ink transition-colors shadow-[0_2px_10px_-4px_rgba(22,35,59,0.4)]"
         >
           {t.searchHotelsLabel("★".repeat(minStars))} <ExternalLink size={14} />
+        </a>
+        <a
+          href={flightsUrl}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          className="inline-flex items-center justify-center gap-1.5 text-sm font-semibold px-4 py-2.5 rounded-xl border border-ink/15 text-ink hover:border-gold-deep hover:text-gold-deep transition-colors"
+        >
+          <Plane size={14} /> {t.searchFlightsLabel} <ExternalLink size={14} />
         </a>
       </div>
     </article>

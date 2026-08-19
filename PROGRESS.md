@@ -52,3 +52,38 @@ recognized purchasing-power benchmark, Big Mac Index style. Two tabs stay:
   they're unrestricted. bash network only reaches: github.com, api.github.com, npm/pypi registries.
 - i18n lives in src/lib/i18n.tsx — single file, 4 full locale dicts (en/he/es/fr). Always update
   all 4 when adding a string, never leave one language with English fallback silently.
+
+## Session 3 update (security architecture + Big Mac Index)
+
+Done this session:
+- [x] Big Mac Index purchasing power (real Economist data + GDP regression fallback) - LIVE
+- [x] Verified FX accuracy against 3 independent live sources (GBP/USD, GBP/JPY, GBP/TRY all confirmed correct)
+- [x] Secured a sandbox provider API key as GH secret PROVIDER_SANDBOX_KEY_UNCONFIRMED (name pending
+      provider confirmation from user - asked, awaiting answer)
+- [x] Built Worker backend architecture: src/worker.ts handles /api/*, falls through to ASSETS for SPA.
+      wrangler.jsonc updated with "main" + "assets.binding":"ASSETS".
+- [x] Input validation: src/server/validate.ts - strict whitelist (destId against destinations.json),
+      date/int bounds checking, throws ValidationError -> 400.
+- [x] SSRF defense: outbound provider URLs will be built ONLY from server-stored whitelist data,
+      never from raw client input, by construction.
+- [x] Timeout + limited exponential-backoff retry helper in worker.ts (fetchWithTimeout/fetchWithRetry).
+- [x] Naive per-isolate rate limiter in worker.ts (documented as best-effort; recommended user also
+      enable Cloudflare dashboard Rate Limiting Rules for defense in depth).
+- [x] No-PII click tracking: src/lib/affiliateTracking.ts, crypto.randomUUID() only.
+- [x] Trip.com affiliate link wired into DestinationCard "Search flights" button (safe - public
+      affiliate link, no secret involved) - LIVE now.
+- [x] tsconfig.worker.json added (separate typecheck for Workers runtime vs browser frontend),
+      @cloudflare/workers-types installed, CI now runs `tsc -p tsconfig.worker.json` before build.
+
+STILL TODO (blocked on user confirming which provider Key #7031 is for):
+- [ ] Once confirmed: implement actual handleHotelSearch() provider call in src/worker.ts
+      (currently returns 501 placeholder)
+- [ ] Rename PROVIDER_SANDBOX_KEY_UNCONFIRMED secret to something provider-specific once known
+- [ ] noindex meta tag: NOT YET NEEDED (no provider content pulled into pages yet) - implement
+      the moment any Viator/GetYourGuide-style unique content (tour descriptions, reviews) gets
+      rendered on a page. Do this BEFORE that content ships, not after.
+- [ ] Point 1 (trip-length + flight-cost-included toggle for "cheapest now" ranking): NOT STARTED.
+      Depends on real flight price data - same provider-key blocker. Once a flights API (Kiwi
+      Tequila / Skyscanner) is confirmed+wired, revisit rank.ts to blend flight cost into the
+      Big Mac / purchasing-power ranking, weighted by trip length (short trip = flight cost
+      dominates; long trip = local purchasing power dominates). UI: toggle above "hidden gems only".
