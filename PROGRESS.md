@@ -1,0 +1,54 @@
+# PROGRESS / TODO — Big Mac Index pivot
+
+Goal (from user, Aug 2026): replace the made-up "avgDailyBudgetUSD" ranking with a
+recognized purchasing-power benchmark, Big Mac Index style. Two tabs stay:
+1. "Cheapest now" — ranked by purchasing power: how many Big Macs $100 (or home-currency
+   equivalent) buys in each destination, using LIVE FX (already built, don't touch fx.ts/fxLive.ts).
+   Do NOT show the raw calculation/formula on the card — just the resulting comparison.
+   Explicitly NOT based on local salaries — purely "what does a fixed amount of my money buy there".
+2. "Biggest movers" — UNCHANGED, already correct (1/3/5yr slider, live historical rates).
+
+## Checklist (mark [x] as completed)
+
+- [x] 0. Live site working, auto-deploy via GitHub Actions -> Cloudflare Workers confirmed working
+      (repo: bazzizazzi/fx-trip-compass2, push to main auto-deploys in ~40s)
+- [ ] 1. Research real Big Mac Index prices (local currency) per country — The Economist's index,
+      most recent edition. Target: cover as many of the 59 destinations' countries as possible.
+      Store in src/data/bigmac.json: { countryCode, localPrice, currencyCode, asOf }
+- [ ] 2. For destinations whose country ISN'T in the Big Mac Index (many "hidden gem" countries:
+      Georgia, Armenia, Laos, Cambodia, Nepal, Mongolia, Kenya, Tanzania, Namibia, Fiji, Bosnia,
+      Albania, Macedonia, Montenegro, etc.) — decide + implement a documented fallback proxy
+      (candidate: World Bank ICP/PPP conversion factor, broader country coverage, cite as source).
+- [ ] 3. New lib: src/lib/purchasingPower.ts — given home currency + live rates + bigmac data,
+      compute "Big Macs per $100" (or per home-currency-equivalent-of-$100) for a destination.
+      Full-precision, same USD-pivot convention as fx.ts.
+- [ ] 4. Rewrite rank.ts `rankCheapestNow` to sort by this purchasing-power score instead of
+      totalHome budget estimate. Remove/replace avgDailyBudgetUSD usage in destinations.json
+      (either drop the field or keep it unused — decide during implementation).
+- [ ] 5. Redesign DestinationCard's "cheap now" stat line: replace "$X for 6 days" with something
+      like "🍔 X Big Macs per $100" — friendly, no exposed formula. Keep "movers" card variant as-is.
+- [ ] 6. i18n: add new translation keys for the Big Mac stat across en/he/es/fr (see src/lib/i18n.tsx
+      pattern already established — follow it exactly, all 4 languages every time).
+- [ ] 7. Footer disclosure: mention Big Mac Index (Economist) + PPP fallback as data sources,
+      same honest-disclosure pattern as the FX footer text already has.
+- [ ] 8. Build, screenshot-verify (puppeteer-core at
+      /home/claude/.cache/puppeteer/chrome/linux-131.0.6778.204/chrome-linux64/chrome — ALWAYS
+      start vite preview AND run puppeteer in the SAME bash_tool call, background jobs die between
+      calls in this environment).
+- [ ] 9. Commit + push to bazzizazzi/fx-trip-compass2 main -> auto-deploys via Actions.
+- [ ] 10. Verify live via web_fetch (note: web_fetch appears to cache by URL ignoring query strings
+       in this environment — ask the user to hard-refresh for final visual confirmation if own
+       verification looks stale despite a fresh successful deploy log).
+
+## Key infra facts (don't rediscover these)
+- GitHub repo: bazzizazzi/fx-trip-compass2, already has working CI at
+  .github/workflows/deploy.yml (Node 22, npx wrangler deploy, secrets already set:
+  CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID — already in repo secrets, don't ask user again).
+- Live URL: https://fx-trip-compass2.bazzizazzi.workers.dev
+- FX data: src/lib/fxLive.ts uses fawazahmed0/currency-api via jsDelivr CDN (current + historical,
+  200+ currencies, confirmed CORS-safe). Don't switch providers again without strong reason.
+- This sandbox's bash network CANNOT reach github.com's actions log blob storage, cloudflare API,
+  or most external APIs directly — use web_search/web_fetch tools for external research instead,
+  they're unrestricted. bash network only reaches: github.com, api.github.com, npm/pypi registries.
+- i18n lives in src/lib/i18n.tsx — single file, 4 full locale dicts (en/he/es/fr). Always update
+  all 4 when adding a string, never leave one language with English fallback silently.
