@@ -88,23 +88,11 @@ session cuts off mid-way. Work through in THIS order:
       DONE locally, NOT YET committed/pushed. Placeholders: [CONTACT EMAIL],
       [COMPANY / INDIVIDUAL NAME], [JURISDICTION] - user needs to fill these in eventually,
       flagged clearly in the disclosure to user, not blocking ship.
-- [ ] 4.4 Build LegalPage.tsx component that renders a LegalDoc (title/intro/sections) --
-      NEXT STEP, not started yet.
-- [ ] 4.5 Add lightweight client-side routing (NO router library - just check
-      window.location.pathname in main.tsx/App, render LegalPage for /privacy and /terms,
-      else render normal App). wrangler.jsonc already has
-      not_found_handling:"single-page-application" so /privacy and /terms will correctly
-      fall through to index.html on Cloudflare - just need the SPA itself to branch on path.
-- [ ] 4.6 Add footer links to /privacy and /terms in App.tsx footer, in all 4 languages
-      (translation keys: privacyPolicyLink, termsLink - add to i18n.tsx Dict + all 4 locales,
-      same pattern as every other key in that file).
-- [ ] 4.7 Build, typecheck (both tsc -p tsconfig.app.json AND tsc -p tsconfig.worker.json),
-      commit, push, verify via deploy log (the .deploy-logs/last-run.txt trick - always
-      works, don't waste time on puppeteer/screenshot verification which is flaky in this
-      sandbox).
-- [ ] 4.8 Report back to user: legal pages live, ask them to fill in the 3 bracketed
-      placeholders (email/company name/jurisdiction) when they have them - I can push that
-      update in one line once they give me those 3 facts.
+- [x] 4.4 LegalPage.tsx component - DONE.
+- [x] 4.5 Lightweight routing (Root.tsx, no router library, pathname check) - DONE.
+- [x] 4.6 Footer links to /privacy and /terms, all 4 languages - DONE.
+- [x] 4.7 Build + typecheck both configs + commit + push - DONE (commit 0f8e04c).
+- [x] 4.8 Deployed and verified via deploy log - Version ID c5339b9d - LIVE.
 
 ## Still explicitly OUT OF SCOPE for this session (per user's "stay focused" instruction) -
 ## do NOT start these without user re-confirming, to avoid scope creep:
