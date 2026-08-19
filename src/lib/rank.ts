@@ -18,21 +18,28 @@ export function rankCheapestNow(
   destinations: Destination[],
   currentRates: Record<string, number>,
   homeCurrency: string,
-  f: Filters
-): (Destination & { totalHome: number; bigMacs: number })[] {
+  f: Filters,
+  flightCostsHome?: Record<string, number> // destId -> flight cost in home currency, only when includeFlights is on AND data is available
+): (Destination & { totalHome: number; bigMacs: number; flightCostHome?: number })[] {
   const homeReferenceAmount = REFERENCE_HOME_AMOUNT_USD_EQUIV * currentRates[homeCurrency];
   return destinations
     .filter((d) => hasBigMacData(d.currencyCode))
+    // When "include flights" is on, a destination with no known flight price
+    // is EXCLUDED rather than assumed free/cheap - never silently treated as $0.
+    .filter((d) => !f.includeFlights || (flightCostsHome && flightCostsHome[d.id] != null))
     .map((d) => {
       const bigMacs = bigMacsPerHomeAmount(currentRates, homeReferenceAmount, homeCurrency, d.currencyCode) ?? 0;
-      return {
-        ...d,
-        totalHome: usdToHome(currentRates, d.avgDailyBudgetUSD * f.days, homeCurrency),
-        bigMacs,
-      };
+      const flightCostHome = flightCostsHome?.[d.id];
+      const totalHome =
+        usdToHome(currentRates, d.avgDailyBudgetUSD * f.days, homeCurrency) + (f.includeFlights ? flightCostHome ?? 0 : 0);
+      return { ...d, totalHome, bigMacs, flightCostHome };
     })
     .filter((d) => isFinite(d.totalHome) && isFinite(d.bigMacs) && passesCommonFilters(d, f, d.totalHome))
-    .sort((a, b) => b.bigMacs - a.bigMacs); // more burgers for your money = cheaper for you
+    .sort((a, b) =>
+      // With flights included, total trip cost (accommodation+flight) is the more
+      // meaningful ranking than pure local purchasing power - flip the sort key.
+      f.includeFlights ? a.totalHome - b.totalHome : b.bigMacs - a.bigMacs
+    );
 }
 
 export function rankBiggestMovers(

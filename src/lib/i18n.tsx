@@ -30,6 +30,9 @@ type Dict = {
   filterBudgetPlaceholder: string;
   filterMinStars: string;
   filterHiddenGemsOnly: string;
+  includeFlightsLabel: string;
+  flightsUnavailableShort: string;
+  flightsUnavailableTooltip: string;
   excludedNote: (count: number) => string;
   noResultsTitle: string;
   noResultsSub: string;
@@ -86,6 +89,9 @@ const dict: Record<Lang, Dict> = {
     filterBudgetPlaceholder: "No limit",
     filterMinStars: "Minimum hotel stars",
     filterHiddenGemsOnly: "Hidden gems only",
+    includeFlightsLabel: "Include flight cost in ranking",
+    flightsUnavailableShort: "not connected yet",
+    flightsUnavailableTooltip: "We don't have a live flights data connection yet, so this stays off rather than show you a guessed price.",
     excludedNote: (n) => `${n} destinations aren't shown for you — active conflict zones, or destinations where political history is still too sensitive for the average traveler. This list is curated manually and doesn't auto-update after political shifts.`,
     noResultsTitle: "No results with these filters",
     noResultsSub: "Try widening the budget, changing the month, or lowering the star requirement.",
@@ -125,6 +131,9 @@ const dict: Record<Lang, Dict> = {
     filterBudgetPlaceholder: "ללא הגבלה",
     filterMinStars: "מינימום כוכבים למלון",
     filterHiddenGemsOnly: "פינות נסתרות בלבד",
+    includeFlightsLabel: "כלול עלות טיסה בדירוג",
+    flightsUnavailableShort: "עדיין לא מחובר",
+    flightsUnavailableTooltip: "אין לנו עדיין חיבור לנתוני טיסות בזמן אמת, אז זה נשאר כבוי במקום להראות לך מחיר מנוחש.",
     excludedNote: (n) => `${n} יעדים לא מוצגים עבורך — אזורי סכסוך פעיל, או יעדים שההיסטוריה המדינית ביניכם עדיין רגישה מדי לתייר ממוצע. הרשימה נשמרת ידנית ולא מתעדכנת אוטומטית אחרי שינויים פוליטיים.`,
     noResultsTitle: "אין תוצאות עם הפילטרים האלה",
     noResultsSub: "נסה להרחיב את התקציב, לשנות חודש, או להוריד את דרישת הכוכבים.",
@@ -164,6 +173,9 @@ const dict: Record<Lang, Dict> = {
     filterBudgetPlaceholder: "Sin límite",
     filterMinStars: "Estrellas mínimas del hotel",
     filterHiddenGemsOnly: "Solo joyas escondidas",
+    includeFlightsLabel: "Incluir coste de vuelo en el ranking",
+    flightsUnavailableShort: "aún no conectado",
+    flightsUnavailableTooltip: "Todavía no tenemos una conexión de datos de vuelos en vivo, así que esto queda desactivado en vez de mostrarte un precio adivinado.",
     excludedNote: (n) => `${n} destinos no se muestran para ti — zonas en conflicto activo, o destinos cuya historia política sigue siendo demasiado sensible para el viajero medio. Esta lista se mantiene manualmente y no se actualiza automáticamente tras cambios políticos.`,
     noResultsTitle: "Sin resultados con estos filtros",
     noResultsSub: "Prueba a ampliar el presupuesto, cambiar el mes, o bajar el requisito de estrellas.",
@@ -203,6 +215,9 @@ const dict: Record<Lang, Dict> = {
     filterBudgetPlaceholder: "Sans limite",
     filterMinStars: "Étoiles minimum de l'hôtel",
     filterHiddenGemsOnly: "Pépites cachées uniquement",
+    includeFlightsLabel: "Inclure le coût du vol dans le classement",
+    flightsUnavailableShort: "pas encore connecté",
+    flightsUnavailableTooltip: "Nous n'avons pas encore de connexion de données de vols en direct, donc ceci reste désactivé plutôt que d'afficher un prix deviné.",
     excludedNote: (n) => `${n} destinations ne sont pas affichées pour vous — zones de conflit actif, ou destinations dont l'histoire politique reste trop sensible pour le voyageur moyen. Cette liste est tenue à jour manuellement et ne se met pas à jour automatiquement après un changement politique.`,
     noResultsTitle: "Aucun résultat avec ces filtres",
     noResultsSub: "Essayez d'élargir le budget, de changer de mois, ou de baisser l'exigence d'étoiles.",

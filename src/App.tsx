@@ -11,6 +11,8 @@ import { currentMonth } from "./lib/months";
 import { rankCheapestNow, rankBiggestMovers } from "./lib/rank";
 import { useI18n } from "./lib/i18n";
 import { useFx } from "./lib/FxContext";
+import { useFlightsCapability, useFlightCosts } from "./lib/useFlights";
+import { dateRangeForMonth } from "./lib/months";
 import { ShieldAlert, Info } from "lucide-react";
 
 const STORAGE_KEY = "fxtrip.home_country";
@@ -33,7 +35,20 @@ export default function App() {
     maxBudgetHome: null,
     minStars: 3,
     hiddenGemsOnly: false,
+    includeFlights: false,
   });
+
+  const flightsAvailable = useFlightsCapability();
+  const visible = useMemo(() => visibleDestinationsFor(homeCountryCode), [homeCountryCode]);
+  const { checkin, checkout } = useMemo(() => dateRangeForMonth(filters.month, filters.days), [filters.month, filters.days]);
+  const flightCosts = useFlightCosts(
+    visible,
+    filters.includeFlights && flightsAvailable,
+    homeCurrency,
+    current?.rates ?? null,
+    checkin,
+    checkout
+  );
 
   function handleHomeChange(code: string) {
     setHomeCountryCode(code);
@@ -44,7 +59,6 @@ export default function App() {
     if (tab === "movers") ensureHistorical(years);
   }, [tab, years, ensureHistorical]);
 
-  const visible = useMemo(() => visibleDestinationsFor(homeCountryCode), [homeCountryCode]);
   const totalCount = useMemo(() => allDestinations().length, []);
   const excludedCount = totalCount - visible.length;
 
@@ -53,8 +67,8 @@ export default function App() {
 
   const cheapResults = useMemo(() => {
     if (!current) return [];
-    return rankCheapestNow(visible, current.rates, homeCurrency, filters);
-  }, [visible, current, homeCurrency, filters]);
+    return rankCheapestNow(visible, current.rates, homeCurrency, filters, flightCosts);
+  }, [visible, current, homeCurrency, filters, flightCosts]);
 
   const moverResults = useMemo(() => {
     if (!current || !pastRates) return [];
@@ -95,7 +109,12 @@ export default function App() {
         )}
 
         <div className="mt-6">
-          <FilterBar filters={filters} onChange={setFilters} homeCurrencySymbol={getCurrencyMeta(homeCurrency).symbol} />
+          <FilterBar
+            filters={filters}
+            onChange={setFilters}
+            homeCurrencySymbol={getCurrencyMeta(homeCurrency).symbol}
+            flightsAvailable={flightsAvailable}
+          />
         </div>
 
         {excludedCount > 0 && (
