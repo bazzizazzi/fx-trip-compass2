@@ -75,7 +75,18 @@ Done this session:
 - [x] tsconfig.worker.json added (separate typecheck for Workers runtime vs browser frontend),
       @cloudflare/workers-types installed, CI now runs `tsc -p tsconfig.worker.json` before build.
 
-## Session 4 — task breakdown (do NOT restart from scratch, check boxes as completed)
+## ⚠️ PENDING FROM OPERATOR (added 2026-08-19, do not delete until resolved)
+
+Two placeholders remain in src/lib/legalContent.ts: [CONTACT EMAIL] and
+[COMPANY / INDIVIDUAL NAME]. Governing law/jurisdiction is DONE (Israel / Tel Aviv,
+filled in per operator's explicit instruction). Operator is evaluating whether the
+site is worth pursuing; if so, they'll buy a domain matching the company name, then
+provide the domain-matched company name + a contact email. When they do: replace all
+occurrences of both placeholders across all 4 languages in legalContent.ts, rebuild,
+commit, push, verify via deploy log. This is NOT user-facing anywhere - only visible
+in source, contains no sensitive data.
+
+
 
 Context: user wants tasks broken into checkpoints explicitly so nothing is lost if the
 session cuts off mid-way. Work through in THIS order:

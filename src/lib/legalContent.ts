@@ -5,6 +5,26 @@ export type LegalDoc = { title: string; updated: string; intro: string; sections
 // accounts yet, no email collection, localStorage for preferences only,
 // affiliate outbound links with opaque (non-PII) click IDs. Update this file
 // the moment accounts/SSO/bookings tracking ships - don't let it go stale.
+//
+// ============================================================================
+// ⚠️  PENDING FROM OPERATOR - DO NOT REMOVE THIS BLOCK UNTIL RESOLVED  ⚠️
+// Two placeholders remain unfilled below: [CONTACT EMAIL] and
+// [COMPANY / INDIVIDUAL NAME]. The operator said (2026-08-19): they're
+// evaluating whether the site is worth it, and if so will buy a domain
+// matching the company name, then provide both the domain-matched company
+// name and a contact email.
+// >>> IF A FUTURE SESSION HAS NO MEMORY OF THIS CONVERSATION: when you next
+// touch this file, or if the user mentions a domain/company name/email for
+// this project, ASK THEM whether they want it filled in here, then replace
+// every occurrence of [CONTACT EMAIL] and [COMPANY / INDIVIDUAL NAME] below
+// (all 4 languages) and redeploy. This reminder is intentionally NOT
+// user-facing (never rendered - only visible in source) and contains no
+// sensitive data, per the operator's security instructions. <<<
+// Governing law is already filled in (State of Israel / Tel Aviv courts, per
+// operator's explicit instruction 2026-08-19) - only the two items above
+// remain open.
+// ============================================================================
+//
 // [BRACKETED] placeholders need the operator's real business/contact details
 // filled in before this is relied on as an actual legal document - this is a
 // solid starting draft, not a substitute for a lawyer's review.
@@ -55,7 +75,7 @@ export const LEGAL_CONTENT: Record<string, { privacy: LegalDoc; terms: LegalDoc 
         },
         {
           heading: "Contact",
-          body: ["Questions about this policy: [CONTACT EMAIL]. Operator: [COMPANY / INDIVIDUAL NAME], [JURISDICTION]."],
+          body: ["Questions about this policy: [CONTACT EMAIL]. Operator: [COMPANY / INDIVIDUAL NAME], Israel."],
         },
       ],
     },
@@ -86,20 +106,18 @@ export const LEGAL_CONTENT: Record<string, { privacy: LegalDoc; terms: LegalDoc 
           ],
         },
         {
-          heading: "No warranty",
+          heading: "Limitation of Liability & Disclaimer of Warranties",
           body: [
-            "This site is provided \"as is\", without warranties of any kind, express or implied, to the maximum extent permitted by law.",
+            "To the maximum extent permitted by applicable law, the website and all related content, features, and services are provided on an \"AS IS\" and \"AS AVAILABLE\" basis, without warranties of any kind, whether express, implied, or statutory, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.",
+            "We do not warrant that the website will be uninterrupted, secure, or error-free, or that any defects will be corrected. You acknowledge that the website relies on third-party infrastructure and service providers (including, but not limited to, Cloudflare, hosting providers, and network operators). Under no circumstances shall we be liable for any indirect, incidental, consequential, special, or punitive damages, or for any loss of profits, revenue, data, or use, incurred by you or any third party, whether in an action in contract, tort (including negligence), or otherwise, arising from your access to or use of the website or any third-party service failures.",
           ],
         },
         {
-          heading: "Limitation of liability",
+          heading: "Governing Law and Jurisdiction",
           body: [
-            "To the maximum extent permitted by law, [COMPANY / INDIVIDUAL NAME] is not liable for any indirect, incidental, or consequential damages arising from your use of this site or any booking made through a linked partner site.",
+            "These Terms and any dispute or claim arising out of or in connection with them, their subject matter, or their formation (including non-contractual disputes or claims) shall be governed by and construed in accordance with the laws of the State of Israel, without giving effect to any principles of conflicts of law.",
+            "You irrevocably agree that the competent courts located in Tel Aviv, Israel shall have exclusive jurisdiction to settle any dispute or claim arising out of or in connection with this website, its services, or these Terms.",
           ],
-        },
-        {
-          heading: "Governing law",
-          body: ["These terms are governed by the laws of [JURISDICTION - to be confirmed by the operator]."],
         },
         {
           heading: "Contact",
@@ -153,7 +171,7 @@ export const LEGAL_CONTENT: Record<string, { privacy: LegalDoc; terms: LegalDoc 
         },
         {
           heading: "יצירת קשר",
-          body: ["שאלות לגבי מדיניות זו: [CONTACT EMAIL]. מפעיל: [COMPANY / INDIVIDUAL NAME], [JURISDICTION]."],
+          body: ["שאלות לגבי מדיניות זו: [CONTACT EMAIL]. מפעיל: [COMPANY / INDIVIDUAL NAME], ישראל."],
         },
       ],
     },
@@ -183,16 +201,18 @@ export const LEGAL_CONTENT: Record<string, { privacy: LegalDoc; terms: LegalDoc 
           ],
         },
         {
-          heading: "אין אחריות",
-          body: ["אתר זה מסופק \"כמות שהוא\" (as is), ללא אחריות מכל סוג, מפורשת או משתמעת, במידה המרבית המותרת בחוק."],
+          heading: "הגבלת אחריות והתנערות מאחריות",
+          body: [
+            "במידה המרבית המותרת על פי הדין החל, האתר וכל התוכן, הפיצ'רים והשירותים הקשורים אליו מסופקים על בסיס \"כמות שהוא\" (AS IS) ו-\"כפי שזמין\" (AS AVAILABLE), ללא אחריות מכל סוג, בין אם מפורשת, משתמעת, או סטטוטורית, לרבות אך לא רק אחריות משתמעת לסחירות, התאמה למטרה מסוימת, או אי-הפרה.",
+            "אנו לא מתחייבים שהאתר יפעל ללא הפרעה, יהיה מאובטח, או נטול שגיאות, או שפגמים כלשהם יתוקנו. אתה מאשר שהאתר מסתמך על תשתית וספקי שירות של צד שלישי (לרבות, אך לא רק, Cloudflare, ספקי אחסון, ומפעילי רשת). בשום מקרה לא נישא באחריות לכל נזק עקיף, מקרי, תוצאתי, מיוחד, או עונשי, או לכל אובדן רווחים, הכנסות, מידע, או שימוש, שנגרם לך או לצד שלישי כלשהו, בין אם בתביעה חוזית, נזיקית (לרבות רשלנות), או אחרת, הנובע מהגישה שלך לאתר או השימוש בו או מכשלים בשירותי צד שלישי.",
+          ],
         },
         {
-          heading: "הגבלת אחריות",
-          body: ["במידה המרבית המותרת בחוק, [COMPANY / INDIVIDUAL NAME] לא יישא באחריות לכל נזק עקיף, מקרי, או תוצאתי הנובע משימושך באתר זה או מהזמנה כלשהי שבוצעה דרך אתר שותף מקושר."],
-        },
-        {
-          heading: "דין חל",
-          body: ["תנאים אלה כפופים לדיני [JURISDICTION - לאישור על ידי המפעיל]."],
+          heading: "דין חל וסמכות שיפוט",
+          body: [
+            "תנאים אלה וכל מחלוקת או תביעה הנובעת מהם, מנושאם, או מהיווצרותם (לרבות מחלוקות או תביעות שאינן חוזיות) יוסדרו ויפורשו בהתאם לדיני מדינת ישראל, מבלי לתת תוקף לכללי ברירת דין.",
+            "אתה מסכים באופן בלתי חוזר כי לבתי המשפט המוסמכים הממוקמים בתל אביב, ישראל, תהיה סמכות שיפוט ייחודית להכריע בכל מחלוקת או תביעה הנובעת מאתר זה, משירותיו, או מתנאים אלה.",
+          ],
         },
         {
           heading: "יצירת קשר",
@@ -246,7 +266,7 @@ export const LEGAL_CONTENT: Record<string, { privacy: LegalDoc; terms: LegalDoc 
         },
         {
           heading: "Contacto",
-          body: ["[CONTACT EMAIL]. Operador: [COMPANY / INDIVIDUAL NAME], [JURISDICTION]."],
+          body: ["[CONTACT EMAIL]. Operador: [COMPANY / INDIVIDUAL NAME], Israel."],
         },
       ],
     },
@@ -273,16 +293,18 @@ export const LEGAL_CONTENT: Record<string, { privacy: LegalDoc; terms: LegalDoc 
           ],
         },
         {
-          heading: "Sin garantía",
-          body: ["Este sitio se proporciona \"tal cual\", sin garantías de ningún tipo."],
+          heading: "Limitación de Responsabilidad y Exención de Garantías",
+          body: [
+            "En la máxima medida permitida por la ley aplicable, el sitio y todo el contenido, funciones y servicios relacionados se proporcionan \"TAL CUAL\" y \"SEGÚN DISPONIBILIDAD\", sin garantías de ningún tipo, ya sean expresas, implícitas o legales, incluyendo pero sin limitarse a garantías implícitas de comerciabilidad, idoneidad para un propósito particular, o no infracción.",
+            "No garantizamos que el sitio funcione sin interrupciones, de forma segura o libre de errores, ni que se corrijan los defectos. Reconoces que el sitio depende de infraestructura y proveedores de servicios de terceros (incluyendo, entre otros, Cloudflare, proveedores de alojamiento y operadores de red). Bajo ninguna circunstancia seremos responsables de daños indirectos, incidentales, consecuentes, especiales o punitivos, ni de pérdida de beneficios, ingresos, datos o uso, sufridos por ti o por terceros, ya sea en una acción contractual, extracontractual (incluyendo negligencia), o de otro tipo, derivados de tu acceso o uso del sitio o de fallos en servicios de terceros.",
+          ],
         },
         {
-          heading: "Limitación de responsabilidad",
-          body: ["[COMPANY / INDIVIDUAL NAME] no es responsable de daños indirectos derivados del uso de este sitio."],
-        },
-        {
-          heading: "Ley aplicable",
-          body: ["[JURISDICTION - a confirmar]."],
+          heading: "Ley Aplicable y Jurisdicción",
+          body: [
+            "Estos Términos y cualquier disputa o reclamación que surja de ellos, de su objeto, o de su formación (incluyendo disputas o reclamaciones no contractuales) se regirán e interpretarán de acuerdo con las leyes del Estado de Israel, sin dar efecto a principios de conflicto de leyes.",
+            "Aceptas irrevocablemente que los tribunales competentes ubicados en Tel Aviv, Israel, tendrán jurisdicción exclusiva para resolver cualquier disputa o reclamación que surja de este sitio, sus servicios, o estos Términos.",
+          ],
         },
         {
           heading: "Contacto",
@@ -332,7 +354,7 @@ export const LEGAL_CONTENT: Record<string, { privacy: LegalDoc; terms: LegalDoc 
         },
         {
           heading: "Contact",
-          body: ["[CONTACT EMAIL]. Opérateur : [COMPANY / INDIVIDUAL NAME], [JURISDICTION]."],
+          body: ["[CONTACT EMAIL]. Opérateur : [COMPANY / INDIVIDUAL NAME], Israël."],
         },
       ],
     },
@@ -357,16 +379,18 @@ export const LEGAL_CONTENT: Record<string, { privacy: LegalDoc; terms: LegalDoc 
           body: ["Taux de change et estimations sont indicatifs, pas un conseil financier. Vérifiez toujours auprès de votre banque ou du fournisseur."],
         },
         {
-          heading: "Aucune garantie",
-          body: ["Ce site est fourni \"tel quel\", sans garantie d'aucune sorte."],
+          heading: "Limitation de Responsabilité et Exclusion de Garanties",
+          body: [
+            "Dans toute la mesure permise par la loi applicable, le site et l'ensemble du contenu, des fonctionnalités et des services associés sont fournis \"EN L'ÉTAT\" et \"SELON DISPONIBILITÉ\", sans garantie d'aucune sorte, expresse, implicite ou légale, y compris, sans s'y limiter, les garanties implicites de qualité marchande, d'adéquation à un usage particulier, ou d'absence de contrefaçon.",
+            "Nous ne garantissons pas que le site fonctionnera sans interruption, de manière sécurisée ou sans erreur, ni que les défauts seront corrigés. Vous reconnaissez que le site dépend d'une infrastructure et de fournisseurs de services tiers (y compris, sans s'y limiter, Cloudflare, les hébergeurs et les opérateurs réseau). En aucun cas nous ne pourrons être tenus responsables de dommages indirects, accessoires, consécutifs, spéciaux ou punitifs, ni de toute perte de profits, de revenus, de données ou d'usage, subis par vous ou par un tiers, que ce soit dans le cadre d'une action contractuelle, délictuelle (y compris la négligence), ou autre, découlant de votre accès au site ou de son utilisation, ou de défaillances de services tiers.",
+          ],
         },
         {
-          heading: "Limitation de responsabilité",
-          body: ["[COMPANY / INDIVIDUAL NAME] n'est pas responsable des dommages indirects découlant de l'utilisation de ce site."],
-        },
-        {
-          heading: "Loi applicable",
-          body: ["[JURISDICTION - à confirmer]."],
+          heading: "Droit Applicable et Juridiction",
+          body: [
+            "Les présentes Conditions et tout litige ou réclamation en découlant ou en lien avec elles, leur objet, ou leur formation (y compris les litiges ou réclamations non contractuels) seront régis et interprétés conformément aux lois de l'État d'Israël, sans donner effet aux principes de conflits de lois.",
+            "Vous acceptez irrévocablement que les tribunaux compétents situés à Tel Aviv, en Israël, aient compétence exclusive pour trancher tout litige ou réclamation découlant de ce site, de ses services, ou des présentes Conditions.",
+          ],
         },
         {
           heading: "Contact",
