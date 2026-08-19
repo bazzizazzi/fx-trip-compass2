@@ -165,6 +165,10 @@ export default function App() {
             <Info size={14} className="mt-0.5 shrink-0" />
             <p className="max-w-3xl leading-relaxed">{t.footerDisclosure}</p>
           </div>
+          <div className="flex gap-4 pt-2">
+            <a href="/privacy" className="hover:text-ink hover:underline">{t.privacyPolicyLink}</a>
+            <a href="/terms" className="hover:text-ink hover:underline">{t.termsLink}</a>
+          </div>
         </div>
       </footer>
     </div>

@@ -75,15 +75,56 @@ Done this session:
 - [x] tsconfig.worker.json added (separate typecheck for Workers runtime vs browser frontend),
       @cloudflare/workers-types installed, CI now runs `tsc -p tsconfig.worker.json` before build.
 
-STILL TODO (blocked on user confirming which provider Key #7031 is for):
-- [ ] Once confirmed: implement actual handleHotelSearch() provider call in src/worker.ts
-      (currently returns 501 placeholder)
-- [ ] Rename PROVIDER_SANDBOX_KEY_UNCONFIRMED secret to something provider-specific once known
-- [ ] noindex meta tag: NOT YET NEEDED (no provider content pulled into pages yet) - implement
-      the moment any Viator/GetYourGuide-style unique content (tour descriptions, reviews) gets
-      rendered on a page. Do this BEFORE that content ships, not after.
-- [ ] Point 1 (trip-length + flight-cost-included toggle for "cheapest now" ranking): NOT STARTED.
-      Depends on real flight price data - same provider-key blocker. Once a flights API (Kiwi
-      Tequila / Skyscanner) is confirmed+wired, revisit rank.ts to blend flight cost into the
-      Big Mac / purchasing-power ranking, weighted by trip length (short trip = flight cost
-      dominates; long trip = local purchasing power dominates). UI: toggle above "hidden gems only".
+## Session 4 — task breakdown (do NOT restart from scratch, check boxes as completed)
+
+Context: user wants tasks broken into checkpoints explicitly so nothing is lost if the
+session cuts off mid-way. Work through in THIS order:
+
+- [x] 4.1 Flight-cost-in-ranking toggle - DONE & DEPLOYED (commit ae18b89). Verified live
+      via deploy log (new Version ID). Toggle shows disabled + tooltip since no flights
+      provider is connected (correct "no fake data" behavior).
+- [x] 4.2 Worker routes /api/flights + /api/activities wired into router - DONE (same commit).
+- [x] 4.3 Legal content authored (Privacy Policy + ToS, EN/HE/ES/FR) - src/lib/legalContent.ts
+      DONE locally, NOT YET committed/pushed. Placeholders: [CONTACT EMAIL],
+      [COMPANY / INDIVIDUAL NAME], [JURISDICTION] - user needs to fill these in eventually,
+      flagged clearly in the disclosure to user, not blocking ship.
+- [ ] 4.4 Build LegalPage.tsx component that renders a LegalDoc (title/intro/sections) --
+      NEXT STEP, not started yet.
+- [ ] 4.5 Add lightweight client-side routing (NO router library - just check
+      window.location.pathname in main.tsx/App, render LegalPage for /privacy and /terms,
+      else render normal App). wrangler.jsonc already has
+      not_found_handling:"single-page-application" so /privacy and /terms will correctly
+      fall through to index.html on Cloudflare - just need the SPA itself to branch on path.
+- [ ] 4.6 Add footer links to /privacy and /terms in App.tsx footer, in all 4 languages
+      (translation keys: privacyPolicyLink, termsLink - add to i18n.tsx Dict + all 4 locales,
+      same pattern as every other key in that file).
+- [ ] 4.7 Build, typecheck (both tsc -p tsconfig.app.json AND tsc -p tsconfig.worker.json),
+      commit, push, verify via deploy log (the .deploy-logs/last-run.txt trick - always
+      works, don't waste time on puppeteer/screenshot verification which is flaky in this
+      sandbox).
+- [ ] 4.8 Report back to user: legal pages live, ask them to fill in the 3 bracketed
+      placeholders (email/company name/jurisdiction) when they have them - I can push that
+      update in one line once they give me those 3 facts.
+
+## Still explicitly OUT OF SCOPE for this session (per user's "stay focused" instruction) -
+## do NOT start these without user re-confirming, to avoid scope creep:
+- Google SSO / user accounts / booking tracking (user asked about this - real scope, needs
+  Google Cloud OAuth client credentials from user + a database, e.g. Cloudflare D1. NOT
+  started. When picked up: needs its own session, don't bolt it on halfway through something
+  else.)
+- World Bank ICP Restaurants & Hotels PLI as a second purchasing-power index (user's point
+  6/7) - confirmed NOT cleanly available via simple API, needs a real focused data-sourcing
+  pass. NOT started. Big Mac remains the only wired index; index-picker UI framework itself
+  also NOT built yet (would be a small addition once a 2nd index exists - low priority until
+  the data problem is solved).
+- Trip.com flights API depth check (does their existing affiliate account grant flight
+  search API access beyond the deep-link we already have?) - NOT investigated this session.
+- Real Viator sandbox call has NOT been live-tested end-to-end (this sandbox can't reach
+  api.sandbox.viator.com directly - same infra limit as Cloudflare API earlier). Code is
+  written per official docs but unverified live. Consider asking user to trigger
+  /api/activities?destId=d1&checkin=2027-01-10&checkout=2027-01-16&adults=2&minStars=3
+  on the live site once deployed and report back what they see, OR build a self-contained
+  diagnostic page.
+- noindex meta tag: still correctly not needed - no provider content renders on any public
+  page yet (Viator integration is backend-only, nothing surfaced in the UI).
+
