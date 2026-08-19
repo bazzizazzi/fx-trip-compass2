@@ -4,11 +4,19 @@
 🌀 Building list of assets...
 ✨ Read 6 files from the assets directory /home/runner/work/fx-trip-compass2/fx-trip-compass2/dist
 🌀 Starting asset upload...
-No updated asset files to upload. Proceeding with deployment...
+🌀 Found 3 new or modified static assets to upload. Proceeding with upload...
++ /index.html
++ /assets/index-DM9pF7n6.css
++ /assets/index-Bi4ON6k2.js
+Uploaded 1 of 3 assets
+Uploaded 2 of 3 assets
+Uploaded 3 of 3 assets
+✨ Success! Uploaded 3 files (2 already uploaded) (1.18 sec)
+
 Total Upload: 0.31 KiB / gzip: 0.22 KiB
-Uploaded fx-trip-compass2 (2.38 sec)
-Deployed fx-trip-compass2 triggers (0.53 sec)
+Uploaded fx-trip-compass2 (5.13 sec)
+Deployed fx-trip-compass2 triggers (0.46 sec)
   https://fx-trip-compass2.bazzizazzi.workers.dev
-Current Version ID: 95d73caf-88fa-4e96-b843-bfd14bc18e94
+Current Version ID: f729e32a-8031-4d06-9291-c5ea2f7653b5
 
 Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
