@@ -11,13 +11,14 @@ type Props = {
   homeCurrency: string;
   currentRates: Record<string, number>;
   pastRates?: Record<string, number>;
+  bigMacs?: number;
   days: number;
   month: number;
   minStars: number;
   showMovement: boolean;
 };
 
-export default function DestinationCard({ dest, homeCurrency, currentRates, pastRates, days, month, minStars, showMovement }: Props) {
+export default function DestinationCard({ dest, homeCurrency, currentRates, pastRates, bigMacs, days, month, minStars, showMovement }: Props) {
   const { t, lang } = useI18n();
   const home = getCurrencyMeta(homeCurrency);
   const totalUsd = dest.avgDailyBudgetUSD * days;
@@ -68,12 +69,14 @@ export default function DestinationCard({ dest, homeCurrency, currentRates, past
         </div>
 
         <div className="border-t border-ink/10 pt-3 mt-auto space-y-2">
-          <div className="flex items-baseline justify-between">
-            <span className="text-xs text-muted">{t.estimateLabel(days)}</span>
-            <span className="font-mono-num text-lg font-semibold text-ink">
-              {home.symbol}{formatAmount(totalHome, homeCurrency)}
-            </span>
-          </div>
+          {!showMovement && bigMacs != null && (
+            <div className="flex items-baseline justify-between">
+              <span className="text-xs text-muted">{t.purchasingPowerLabel}</span>
+              <span className="font-mono-num text-lg font-semibold text-ink flex items-center gap-1.5">
+                🍔 {bigMacs.toFixed(1)}
+              </span>
+            </div>
+          )}
 
           {showMovement && movementPct != null && (
             <div>
@@ -88,6 +91,11 @@ export default function DestinationCard({ dest, homeCurrency, currentRates, past
               <FxMeter pct={movementPct} />
             </div>
           )}
+
+          <div className="flex items-baseline justify-between text-xs text-muted">
+            <span>{t.estimateLabel(days)}</span>
+            <span className="font-mono-num">{home.symbol}{formatAmount(totalHome, homeCurrency)}</span>
+          </div>
         </div>
 
         <a

@@ -1,6 +1,9 @@
 import type { Destination } from "./destinations";
 import { usdToHome, fxMovementPct } from "./fx";
+import { bigMacsPerHomeAmount, hasBigMacData } from "./purchasingPower";
 import type { Filters } from "../components/FilterBar";
+
+const REFERENCE_HOME_AMOUNT_USD_EQUIV = 100; // "how far does a $100-equivalent go" - fixed yardstick
 
 function passesCommonFilters(d: Destination, f: Filters, totalHome: number): boolean {
   if (f.hiddenGemsOnly && !d.hiddenGem) return false;
@@ -16,11 +19,20 @@ export function rankCheapestNow(
   currentRates: Record<string, number>,
   homeCurrency: string,
   f: Filters
-): (Destination & { totalHome: number })[] {
+): (Destination & { totalHome: number; bigMacs: number })[] {
+  const homeReferenceAmount = REFERENCE_HOME_AMOUNT_USD_EQUIV * currentRates[homeCurrency];
   return destinations
-    .map((d) => ({ ...d, totalHome: usdToHome(currentRates, d.avgDailyBudgetUSD * f.days, homeCurrency) }))
-    .filter((d) => isFinite(d.totalHome) && passesCommonFilters(d, f, d.totalHome))
-    .sort((a, b) => a.totalHome - b.totalHome);
+    .filter((d) => hasBigMacData(d.currencyCode))
+    .map((d) => {
+      const bigMacs = bigMacsPerHomeAmount(currentRates, homeReferenceAmount, homeCurrency, d.currencyCode) ?? 0;
+      return {
+        ...d,
+        totalHome: usdToHome(currentRates, d.avgDailyBudgetUSD * f.days, homeCurrency),
+        bigMacs,
+      };
+    })
+    .filter((d) => isFinite(d.totalHome) && isFinite(d.bigMacs) && passesCommonFilters(d, f, d.totalHome))
+    .sort((a, b) => b.bigMacs - a.bigMacs); // more burgers for your money = cheaper for you
 }
 
 export function rankBiggestMovers(

@@ -1,0 +1,371 @@
+{
+  "asOf": "2026-07-01",
+  "methodology": "Real prices from The Economist Big Mac Index (CC-BY-4.0), July 2026 release, for currencies it covers. For currencies outside that coverage, a price is estimated from a log-linear regression of Big Mac price against IMF GDP-per-capita (PPP) fitted on the Economist's own 54-country dataset.",
+  "prices": {
+    "ARS": {
+      "localPrice": 8700.0,
+      "source": "economist-2026-07",
+      "countryName": "Argentina"
+    },
+    "AUD": {
+      "localPrice": 8.5,
+      "source": "economist-2026-07",
+      "countryName": "Australia"
+    },
+    "AZN": {
+      "localPrice": 7.25,
+      "source": "economist-2026-07",
+      "countryName": "Azerbaijan"
+    },
+    "BHD": {
+      "localPrice": 1.8,
+      "source": "economist-2026-07",
+      "countryName": "Bahrain"
+    },
+    "BRL": {
+      "localPrice": 23.9,
+      "source": "economist-2026-07",
+      "countryName": "Brazil"
+    },
+    "GBP": {
+      "localPrice": 5.49,
+      "source": "economist-2026-07",
+      "countryName": "Britain"
+    },
+    "CAD": {
+      "localPrice": 8.17,
+      "source": "economist-2026-07",
+      "countryName": "Canada"
+    },
+    "CLP": {
+      "localPrice": 4990.0,
+      "source": "economist-2026-07",
+      "countryName": "Chile"
+    },
+    "CNY": {
+      "localPrice": 26.5,
+      "source": "economist-2026-07",
+      "countryName": "China"
+    },
+    "COP": {
+      "localPrice": 25900.0,
+      "source": "economist-2026-07",
+      "countryName": "Colombia"
+    },
+    "CRC": {
+      "localPrice": 3150.0,
+      "source": "economist-2026-07",
+      "countryName": "Costa Rica"
+    },
+    "CZK": {
+      "localPrice": 115.0,
+      "source": "economist-2026-07",
+      "countryName": "Czech Republic"
+    },
+    "DKK": {
+      "localPrice": 46.0,
+      "source": "economist-2026-07",
+      "countryName": "Denmark"
+    },
+    "EGP": {
+      "localPrice": 145.0,
+      "source": "economist-2026-07",
+      "countryName": "Egypt"
+    },
+    "EUR": {
+      "localPrice": 6.19,
+      "source": "economist-2026-07",
+      "countryName": "Euro area"
+    },
+    "GTQ": {
+      "localPrice": 34.0,
+      "source": "economist-2026-07",
+      "countryName": "Guatemala"
+    },
+    "HNL": {
+      "localPrice": 139.0,
+      "source": "economist-2026-07",
+      "countryName": "Honduras"
+    },
+    "HKD": {
+      "localPrice": 25.5,
+      "source": "economist-2026-07",
+      "countryName": "Hong Kong"
+    },
+    "HUF": {
+      "localPrice": 1660.0,
+      "source": "economist-2026-07",
+      "countryName": "Hungary"
+    },
+    "INR": {
+      "localPrice": 236.25,
+      "source": "economist-2026-07",
+      "countryName": "India"
+    },
+    "IDR": {
+      "localPrice": 43000.0,
+      "source": "economist-2026-07",
+      "countryName": "Indonesia"
+    },
+    "ILS": {
+      "localPrice": 23.0,
+      "source": "economist-2026-07",
+      "countryName": "Israel"
+    },
+    "JPY": {
+      "localPrice": 500.0,
+      "source": "economist-2026-07",
+      "countryName": "Japan"
+    },
+    "JOD": {
+      "localPrice": 2.5,
+      "source": "economist-2026-07",
+      "countryName": "Jordan"
+    },
+    "KWD": {
+      "localPrice": 1.4,
+      "source": "economist-2026-07",
+      "countryName": "Kuwait"
+    },
+    "LBP": {
+      "localPrice": 480000.0,
+      "source": "economist-2026-07",
+      "countryName": "Lebanon"
+    },
+    "MYR": {
+      "localPrice": 14.55,
+      "source": "economist-2026-07",
+      "countryName": "Malaysia"
+    },
+    "MXN": {
+      "localPrice": 109.0,
+      "source": "economist-2026-07",
+      "countryName": "Mexico"
+    },
+    "MDL": {
+      "localPrice": 80.0,
+      "source": "economist-2026-07",
+      "countryName": "Moldova"
+    },
+    "NZD": {
+      "localPrice": 8.8,
+      "source": "economist-2026-07",
+      "countryName": "New Zealand"
+    },
+    "NIO": {
+      "localPrice": 187.0,
+      "source": "economist-2026-07",
+      "countryName": "Nicaragua"
+    },
+    "NOK": {
+      "localPrice": 78.0,
+      "source": "economist-2026-07",
+      "countryName": "Norway"
+    },
+    "OMR": {
+      "localPrice": 1.53,
+      "source": "economist-2026-07",
+      "countryName": "Oman"
+    },
+    "PKR": {
+      "localPrice": 1080.0,
+      "source": "economist-2026-07",
+      "countryName": "Pakistan"
+    },
+    "PEN": {
+      "localPrice": 16.9,
+      "source": "economist-2026-07",
+      "countryName": "Peru"
+    },
+    "PHP": {
+      "localPrice": 169.0,
+      "source": "economist-2026-07",
+      "countryName": "Philippines"
+    },
+    "PLN": {
+      "localPrice": 23.5,
+      "source": "economist-2026-07",
+      "countryName": "Poland"
+    },
+    "QAR": {
+      "localPrice": 18.0,
+      "source": "economist-2026-07",
+      "countryName": "Qatar"
+    },
+    "RON": {
+      "localPrice": 18.35,
+      "source": "economist-2026-07",
+      "countryName": "Romania"
+    },
+    "SAR": {
+      "localPrice": 19.0,
+      "source": "economist-2026-07",
+      "countryName": "Saudi Arabia"
+    },
+    "SGD": {
+      "localPrice": 7.45,
+      "source": "economist-2026-07",
+      "countryName": "Singapore"
+    },
+    "ZAR": {
+      "localPrice": 56.9,
+      "source": "economist-2026-07",
+      "countryName": "South Africa"
+    },
+    "KRW": {
+      "localPrice": 5700.0,
+      "source": "economist-2026-07",
+      "countryName": "South Korea"
+    },
+    "SEK": {
+      "localPrice": 69.0,
+      "source": "economist-2026-07",
+      "countryName": "Sweden"
+    },
+    "CHF": {
+      "localPrice": 7.3,
+      "source": "economist-2026-07",
+      "countryName": "Switzerland"
+    },
+    "TWD": {
+      "localPrice": 78.0,
+      "source": "economist-2026-07",
+      "countryName": "Taiwan"
+    },
+    "THB": {
+      "localPrice": 135.0,
+      "source": "economist-2026-07",
+      "countryName": "Thailand"
+    },
+    "TRY": {
+      "localPrice": 325.0,
+      "source": "economist-2026-07",
+      "countryName": "Turkey"
+    },
+    "UAH": {
+      "localPrice": 149.0,
+      "source": "economist-2026-07",
+      "countryName": "Ukraine"
+    },
+    "AED": {
+      "localPrice": 19.0,
+      "source": "economist-2026-07",
+      "countryName": "United Arab Emirates"
+    },
+    "USD": {
+      "localPrice": 6.22,
+      "source": "economist-2026-07",
+      "countryName": "United States"
+    },
+    "UYU": {
+      "localPrice": 359.0,
+      "source": "economist-2026-07",
+      "countryName": "Uruguay"
+    },
+    "VES": {
+      "localPrice": 3267.0,
+      "source": "economist-2026-07",
+      "countryName": "Venezuela"
+    },
+    "VND": {
+      "localPrice": 76000.0,
+      "source": "economist-2026-07",
+      "countryName": "Vietnam"
+    },
+    "GEL": {
+      "localPrice": 12.5236,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "AMD": {
+      "localPrice": 1697.2445,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "LAK": {
+      "localPrice": 91129.863,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "KHR": {
+      "localPrice": 16030.3733,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "NPR": {
+      "localPrice": 579.9204,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "MNT": {
+      "localPrice": 16376.6193,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "KES": {
+      "localPrice": 504.6218,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "TZS": {
+      "localPrice": 9527.9295,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "NAD": {
+      "localPrice": 67.4293,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "MAD": {
+      "localPrice": 38.5942,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "TND": {
+      "localPrice": 12.5582,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "BGN": {
+      "localPrice": 8.4464,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "RSD": {
+      "localPrice": 487.6274,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "ALL": {
+      "localPrice": 362.3865,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "BAM": {
+      "localPrice": 7.5683,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "MKD": {
+      "localPrice": 241.7828,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "ISK": {
+      "localPrice": 662.5776,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "FJD": {
+      "localPrice": 9.5154,
+      "source": "gdp-estimated",
+      "countryName": null
+    },
+    "DOP": {
+      "localPrice": 269.5661,
+      "source": "gdp-estimated",
+      "countryName": null
+    }
+  }
+}

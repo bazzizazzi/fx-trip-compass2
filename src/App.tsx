@@ -130,6 +130,7 @@ export default function App() {
               homeCurrency={homeCurrency}
               currentRates={current.rates}
               pastRates={tab === "movers" ? pastRates ?? undefined : undefined}
+              bigMacs={tab === "cheap" ? (d as typeof d & { bigMacs?: number }).bigMacs : undefined}
               days={filters.days}
               month={filters.month}
               minStars={filters.minStars}
