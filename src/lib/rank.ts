@@ -1,6 +1,6 @@
 import type { Destination } from "./destinations";
 import { usdToHome, fxMovementPct } from "./fx";
-import { bigMacsPerHomeAmount, hasBigMacData } from "./purchasingPower";
+import { bigMacsPerHomeAmount, hasBigMacData, isBigMacEstimated } from "./purchasingPower";
 import type { Filters } from "../components/FilterBar";
 
 const REFERENCE_HOME_AMOUNT_USD_EQUIV = 100; // "how far does a $100-equivalent go" - fixed yardstick
@@ -20,7 +20,7 @@ export function rankCheapestNow(
   homeCurrency: string,
   f: Filters,
   flightCostsHome?: Record<string, number> // destId -> flight cost in home currency, only when includeFlights is on AND data is available
-): (Destination & { totalHome: number; bigMacs: number; flightCostHome?: number })[] {
+): (Destination & { totalHome: number; bigMacs: number; bigMacEstimated: boolean; flightCostHome?: number })[] {
   const homeReferenceAmount = REFERENCE_HOME_AMOUNT_USD_EQUIV * currentRates[homeCurrency];
   return destinations
     .filter((d) => hasBigMacData(d.currencyCode))
@@ -29,10 +29,11 @@ export function rankCheapestNow(
     .filter((d) => !f.includeFlights || (flightCostsHome && flightCostsHome[d.id] != null))
     .map((d) => {
       const bigMacs = bigMacsPerHomeAmount(currentRates, homeReferenceAmount, homeCurrency, d.currencyCode) ?? 0;
+      const bigMacEstimated = isBigMacEstimated(d.currencyCode);
       const flightCostHome = flightCostsHome?.[d.id];
       const totalHome =
         usdToHome(currentRates, d.avgDailyBudgetUSD * f.days, homeCurrency) + (f.includeFlights ? flightCostHome ?? 0 : 0);
-      return { ...d, totalHome, bigMacs, flightCostHome };
+      return { ...d, totalHome, bigMacs, bigMacEstimated, flightCostHome };
     })
     .filter((d) => isFinite(d.totalHome) && isFinite(d.bigMacs) && passesCommonFilters(d, f, d.totalHome))
     .sort((a, b) =>

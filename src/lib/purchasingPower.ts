@@ -7,6 +7,10 @@ export function hasBigMacData(currencyCode: string): boolean {
   return PRICES[currencyCode] != null;
 }
 
+export function isBigMacEstimated(currencyCode: string): boolean {
+  return PRICES[currencyCode]?.source === "gdp-estimated";
+}
+
 /**
  * How many Big Macs does a fixed amount of home currency buy in the destination?
  * Uses the SAME USD-pivot, full-precision convention as fx.ts - rates here are

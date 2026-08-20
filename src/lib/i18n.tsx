@@ -39,6 +39,8 @@ type Dict = {
   estimateLabel: (days: number) => string;
   fxMoveLabel: string;
   purchasingPowerLabel: string;
+  bigMacEstimatedBadge: string;
+  bigMacEstimatedTooltip: string;
   seasonBadge: (month: string) => string;
   hiddenGemBadge: string;
   searchHotelsLabel: (stars: string) => string;
@@ -100,6 +102,8 @@ const dict: Record<Lang, Dict> = {
     estimateLabel: (days) => `${days}-day estimate (excl. flights)`,
     fxMoveLabel: "FX move",
     purchasingPowerLabel: "What $100 buys you there",
+    bigMacEstimatedBadge: "est.",
+    bigMacEstimatedTooltip: "This currency isn't in The Economist's Big Mac Index. This number is estimated from a GDP-based model, not a real menu price - treat it as a rough approximation.",
     seasonBadge: (m) => `Best in ${m}`,
     hiddenGemBadge: "Hidden gem",
     searchHotelsLabel: (stars) => `Search hotels (${stars}+)`,
@@ -144,6 +148,8 @@ const dict: Record<Lang, Dict> = {
     estimateLabel: (days) => `הערכה ל-${days} ימים (בלי טיסות)`,
     fxMoveLabel: "תזוזת שער",
     purchasingPowerLabel: "מה 100$ קונה לך שם",
+    bigMacEstimatedBadge: "משוער",
+    bigMacEstimatedTooltip: "המטבע הזה לא נמצא במדד ביג מק של The Economist. המספר הזה מוערך על סמך מודל מבוסס תמ\"ג, לא מחיר תפריט אמיתי - יש להתייחס אליו כקירוב גס בלבד.",
     seasonBadge: (m) => `עונה מומלצת ב${m}`,
     hiddenGemBadge: "פינה נסתרת",
     searchHotelsLabel: (stars) => `חפש מלונות (${stars}+)`,
@@ -188,6 +194,8 @@ const dict: Record<Lang, Dict> = {
     estimateLabel: (days) => `Estimación de ${days} días (sin vuelos)`,
     fxMoveLabel: "Movimiento cambiario",
     purchasingPowerLabel: "Lo que compran $100 allí",
+    bigMacEstimatedBadge: "est.",
+    bigMacEstimatedTooltip: "Esta moneda no está en el Big Mac Index de The Economist. Esta cifra es una estimación basada en un modelo de PIB, no un precio de menú real - trátala como una aproximación aproximada.",
     seasonBadge: (m) => `Mejor en ${m}`,
     hiddenGemBadge: "Joya escondida",
     searchHotelsLabel: (stars) => `Buscar hoteles (${stars}+)`,
@@ -232,6 +240,8 @@ const dict: Record<Lang, Dict> = {
     estimateLabel: (days) => `Estimation sur ${days} jours (hors vols)`,
     fxMoveLabel: "Mouvement de change",
     purchasingPowerLabel: "Ce que 100$ vous achète là-bas",
+    bigMacEstimatedBadge: "est.",
+    bigMacEstimatedTooltip: "Cette devise ne figure pas dans le Big Mac Index de The Economist. Ce chiffre est estimé à partir d'un modèle basé sur le PIB, pas un vrai prix de menu - à considérer comme une approximation grossière.",
     seasonBadge: (m) => `Idéal en ${m}`,
     hiddenGemBadge: "Pépite cachée",
     searchHotelsLabel: (stars) => `Chercher des hôtels (${stars}+)`,
