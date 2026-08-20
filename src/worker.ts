@@ -257,8 +257,18 @@ export default {
       }
     }
 
-    // Everything else: serve the static SPA build.
-    return env.ASSETS.fetch(request);
+    // Everything else: serve the static SPA build. The HTML shell must NEVER
+    // be cached by the browser - it's what references the hashed JS/CSS
+    // filenames, so a stale cached HTML page keeps loading old code forever
+    // even after a fresh deploy. Hashed assets (immutable, filename changes
+    // every build) are safe to let cache normally.
+    const assetResponse = await env.ASSETS.fetch(request);
+    if (url.pathname === "/" || url.pathname.endsWith(".html") || !url.pathname.includes(".")) {
+      const res = new Response(assetResponse.body, assetResponse);
+      res.headers.set("Cache-Control", "no-cache, must-revalidate");
+      return res;
+    }
+    return assetResponse;
   },
 };
 
