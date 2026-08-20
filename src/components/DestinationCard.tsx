@@ -4,6 +4,7 @@ import { usdToHome, formatAmount, fxMovementPct, getCurrencyMeta } from "../lib/
 import { dateRangeForMonth } from "../lib/months";
 import { useI18n } from "../lib/i18n";
 import { generateClickId, buildTripComUrl } from "../lib/affiliateTracking";
+import type { PurchasingPowerIndex } from "../lib/purchasingPower";
 import FxMeter from "./FxMeter";
 import DestinationArt from "./DestinationArt";
 
@@ -14,13 +15,15 @@ type Props = {
   pastRates?: Record<string, number>;
   bigMacs?: number;
   bigMacEstimated?: boolean;
+  pli?: number | null;
+  ppIndex?: PurchasingPowerIndex;
   days: number;
   month: number;
   minStars: number;
   showMovement: boolean;
 };
 
-export default function DestinationCard({ dest, homeCurrency, currentRates, pastRates, bigMacs, bigMacEstimated, days, month, minStars, showMovement }: Props) {
+export default function DestinationCard({ dest, homeCurrency, currentRates, pastRates, bigMacs, bigMacEstimated, pli, ppIndex, days, month, minStars, showMovement }: Props) {
   const { t, lang } = useI18n();
   const home = getCurrencyMeta(homeCurrency);
   const totalUsd = dest.avgDailyBudgetUSD * days;
@@ -72,7 +75,7 @@ export default function DestinationCard({ dest, homeCurrency, currentRates, past
         </div>
 
         <div className="border-t border-ink/10 pt-3 mt-auto space-y-2">
-          {!showMovement && bigMacs != null && (
+          {!showMovement && ppIndex === "bigmac" && bigMacs != null && (
             <div className="flex items-baseline justify-between">
               <span className="text-xs text-muted flex items-center gap-1">
                 {t.purchasingPowerLabel}
@@ -87,6 +90,15 @@ export default function DestinationCard({ dest, homeCurrency, currentRates, past
               </span>
               <span className="font-mono-num text-lg font-semibold text-ink flex items-center gap-1.5">
                 🍔 {bigMacs.toFixed(1)}
+              </span>
+            </div>
+          )}
+
+          {!showMovement && ppIndex === "pli" && pli != null && (
+            <div className="flex items-baseline justify-between">
+              <span className="text-xs text-muted">{t.indexPliLabel}</span>
+              <span className={`font-mono-num text-lg font-semibold ${pli < 100 ? "text-emerald" : "text-ink"}`}>
+                {pli.toFixed(1)} <span className="text-xs text-muted font-sans">/ 100</span>
               </span>
             </div>
           )}

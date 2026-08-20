@@ -1,0 +1,13 @@
+{
+  "methodology": "Eurostat Price Level Index for Restaurants & Hotels, EU=100 basis. Source: Eurostat's official 2025 price-level release (ddn-20250619-1) and Euronews' 2026 reporting on Eurostat PLI data (Servet Yanatma). Only countries with a directly cited, dated figure are included - no interpolation or estimation. This index only covers European countries (36-country Eurostat-OECD PPP programme), unlike the Big Mac Index which has broader global coverage.",
+  "asOf": "2025",
+  "values": {
+    "PT": { "pli": 73.6, "source": "euronews-2026", "countryEn": "Portugal" },
+    "GR": { "pli": 86.1, "source": "euronews-2026", "countryEn": "Greece" },
+    "IT": { "pli": 110.8, "source": "euronews-2026", "countryEn": "Italy" },
+    "FR": { "pli": 116, "source": "euronews-2026", "countryEn": "France" },
+    "BG": { "pli": 53, "source": "eurostat-2025-official", "countryEn": "Bulgaria" },
+    "RO": { "pli": 69, "source": "eurostat-2025-official", "countryEn": "Romania" },
+    "HU": { "pli": 72, "source": "eurostat-2025-official", "countryEn": "Hungary" }
+  }
+}

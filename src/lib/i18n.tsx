@@ -41,6 +41,11 @@ type Dict = {
   purchasingPowerLabel: string;
   bigMacEstimatedBadge: string;
   bigMacEstimatedTooltip: string;
+  indexPickerTitle: string;
+  indexBigMacLabel: string;
+  indexBigMacSub: string;
+  indexPliLabel: string;
+  indexPliSub: string;
   seasonBadge: (month: string) => string;
   hiddenGemBadge: string;
   searchHotelsLabel: (stars: string) => string;
@@ -104,6 +109,11 @@ const dict: Record<Lang, Dict> = {
     purchasingPowerLabel: "What $100 buys you there",
     bigMacEstimatedBadge: "est.",
     bigMacEstimatedTooltip: "This currency isn't in The Economist's Big Mac Index. This number is estimated from a GDP-based model, not a real menu price - treat it as a rough approximation.",
+    indexPickerTitle: "Purchasing-power index",
+    indexBigMacLabel: "Big Mac Index",
+    indexBigMacSub: "Global (Economist)",
+    indexPliLabel: "Restaurant & Hotel Price Level",
+    indexPliSub: "Europe only (Eurostat)",
     seasonBadge: (m) => `Best in ${m}`,
     hiddenGemBadge: "Hidden gem",
     searchHotelsLabel: (stars) => `Search hotels (${stars}+)`,
@@ -150,6 +160,11 @@ const dict: Record<Lang, Dict> = {
     purchasingPowerLabel: "מה 100$ קונה לך שם",
     bigMacEstimatedBadge: "משוער",
     bigMacEstimatedTooltip: "המטבע הזה לא נמצא במדד ביג מק של The Economist. המספר הזה מוערך על סמך מודל מבוסס תמ\"ג, לא מחיר תפריט אמיתי - יש להתייחס אליו כקירוב גס בלבד.",
+    indexPickerTitle: "מדד כוח קנייה",
+    indexBigMacLabel: "מדד ביג מק",
+    indexBigMacSub: "גלובלי (Economist)",
+    indexPliLabel: "רמת מחירי מסעדות ומלונות",
+    indexPliSub: "אירופה בלבד (Eurostat)",
     seasonBadge: (m) => `עונה מומלצת ב${m}`,
     hiddenGemBadge: "פינה נסתרת",
     searchHotelsLabel: (stars) => `חפש מלונות (${stars}+)`,
@@ -196,6 +211,11 @@ const dict: Record<Lang, Dict> = {
     purchasingPowerLabel: "Lo que compran $100 allí",
     bigMacEstimatedBadge: "est.",
     bigMacEstimatedTooltip: "Esta moneda no está en el Big Mac Index de The Economist. Esta cifra es una estimación basada en un modelo de PIB, no un precio de menú real - trátala como una aproximación aproximada.",
+    indexPickerTitle: "Índice de poder adquisitivo",
+    indexBigMacLabel: "Big Mac Index",
+    indexBigMacSub: "Global (Economist)",
+    indexPliLabel: "Nivel de precios restaurantes/hoteles",
+    indexPliSub: "Solo Europa (Eurostat)",
     seasonBadge: (m) => `Mejor en ${m}`,
     hiddenGemBadge: "Joya escondida",
     searchHotelsLabel: (stars) => `Buscar hoteles (${stars}+)`,
@@ -242,6 +262,11 @@ const dict: Record<Lang, Dict> = {
     purchasingPowerLabel: "Ce que 100$ vous achète là-bas",
     bigMacEstimatedBadge: "est.",
     bigMacEstimatedTooltip: "Cette devise ne figure pas dans le Big Mac Index de The Economist. Ce chiffre est estimé à partir d'un modèle basé sur le PIB, pas un vrai prix de menu - à considérer comme une approximation grossière.",
+    indexPickerTitle: "Indice de pouvoir d'achat",
+    indexBigMacLabel: "Big Mac Index",
+    indexBigMacSub: "Mondial (Economist)",
+    indexPliLabel: "Niveau de prix restaurants/hôtels",
+    indexPliSub: "Europe uniquement (Eurostat)",
     seasonBadge: (m) => `Idéal en ${m}`,
     hiddenGemBadge: "Pépite cachée",
     searchHotelsLabel: (stars) => `Chercher des hôtels (${stars}+)`,

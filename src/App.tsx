@@ -2,6 +2,7 @@ import { useMemo, useState, useEffect } from "react";
 import Hero from "./components/Hero";
 import Tabs from "./components/Tabs";
 import FilterBar, { type Filters } from "./components/FilterBar";
+import IndexPicker from "./components/IndexPicker";
 import DestinationCard from "./components/DestinationCard";
 import YearSlider from "./components/YearSlider";
 import LiveDataBadge from "./components/LiveDataBadge";
@@ -9,6 +10,7 @@ import { HOME_COUNTRIES, visibleDestinationsFor, allDestinations } from "./lib/d
 import { getCurrencyMeta } from "./lib/fx";
 import { currentMonth } from "./lib/months";
 import { rankCheapestNow, rankBiggestMovers } from "./lib/rank";
+import type { PurchasingPowerIndex } from "./lib/purchasingPower";
 import { useI18n } from "./lib/i18n";
 import { useFx } from "./lib/FxContext";
 import { useFlightsCapability, useFlightCosts } from "./lib/useFlights";
@@ -29,6 +31,7 @@ export default function App() {
 
   const [tab, setTab] = useState<"cheap" | "movers">("cheap");
   const [years, setYears] = useState(1);
+  const [ppIndex, setPpIndex] = useState<PurchasingPowerIndex>("bigmac");
   const [filters, setFilters] = useState<Filters>({
     month: currentMonth(),
     days: 6,
@@ -67,8 +70,8 @@ export default function App() {
 
   const cheapResults = useMemo(() => {
     if (!current) return [];
-    return rankCheapestNow(visible, current.rates, homeCurrency, filters, flightCosts);
-  }, [visible, current, homeCurrency, filters, flightCosts]);
+    return rankCheapestNow(visible, current.rates, homeCurrency, filters, ppIndex, flightCosts);
+  }, [visible, current, homeCurrency, filters, ppIndex, flightCosts]);
 
   const moverResults = useMemo(() => {
     if (!current || !pastRates) return [];
@@ -105,6 +108,12 @@ export default function App() {
           <div className="mt-4 space-y-3">
             <YearSlider years={years} onChange={setYears} label={t.moversSliderLabel} unit={t.moversYearsUnit} />
             <p className="text-xs text-muted leading-relaxed">{t.moversNoHistoryNote}</p>
+          </div>
+        )}
+
+        {tab === "cheap" && (
+          <div className="mt-4">
+            <IndexPicker value={ppIndex} onChange={setPpIndex} />
           </div>
         )}
 
@@ -151,6 +160,8 @@ export default function App() {
               pastRates={tab === "movers" ? pastRates ?? undefined : undefined}
               bigMacs={tab === "cheap" ? (d as typeof d & { bigMacs?: number }).bigMacs : undefined}
               bigMacEstimated={tab === "cheap" ? (d as typeof d & { bigMacEstimated?: boolean }).bigMacEstimated : undefined}
+              pli={tab === "cheap" ? (d as typeof d & { pli?: number | null }).pli : undefined}
+              ppIndex={ppIndex}
               days={filters.days}
               month={filters.month}
               minStars={filters.minStars}

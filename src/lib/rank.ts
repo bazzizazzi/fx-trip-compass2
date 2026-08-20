@@ -1,6 +1,6 @@
 import type { Destination } from "./destinations";
 import { usdToHome, fxMovementPct } from "./fx";
-import { bigMacsPerHomeAmount, hasBigMacData, isBigMacEstimated } from "./purchasingPower";
+import { bigMacsPerHomeAmount, hasBigMacData, isBigMacEstimated, hasPliData, getPli, type PurchasingPowerIndex } from "./purchasingPower";
 import type { Filters } from "../components/FilterBar";
 
 const REFERENCE_HOME_AMOUNT_USD_EQUIV = 100; // "how far does a $100-equivalent go" - fixed yardstick
@@ -19,28 +19,30 @@ export function rankCheapestNow(
   currentRates: Record<string, number>,
   homeCurrency: string,
   f: Filters,
-  flightCostsHome?: Record<string, number> // destId -> flight cost in home currency, only when includeFlights is on AND data is available
-): (Destination & { totalHome: number; bigMacs: number; bigMacEstimated: boolean; flightCostHome?: number })[] {
+  index: PurchasingPowerIndex,
+  flightCostsHome?: Record<string, number>
+): (Destination & { totalHome: number; bigMacs: number; bigMacEstimated: boolean; pli: number | null; flightCostHome?: number })[] {
   const homeReferenceAmount = REFERENCE_HOME_AMOUNT_USD_EQUIV * currentRates[homeCurrency];
   return destinations
-    .filter((d) => hasBigMacData(d.currencyCode))
+    .filter((d) => (index === "bigmac" ? hasBigMacData(d.currencyCode) : hasPliData(d.countryCode)))
     // When "include flights" is on, a destination with no known flight price
     // is EXCLUDED rather than assumed free/cheap - never silently treated as $0.
     .filter((d) => !f.includeFlights || (flightCostsHome && flightCostsHome[d.id] != null))
     .map((d) => {
       const bigMacs = bigMacsPerHomeAmount(currentRates, homeReferenceAmount, homeCurrency, d.currencyCode) ?? 0;
       const bigMacEstimated = isBigMacEstimated(d.currencyCode);
+      const pli = getPli(d.countryCode);
       const flightCostHome = flightCostsHome?.[d.id];
       const totalHome =
         usdToHome(currentRates, d.avgDailyBudgetUSD * f.days, homeCurrency) + (f.includeFlights ? flightCostHome ?? 0 : 0);
-      return { ...d, totalHome, bigMacs, bigMacEstimated, flightCostHome };
+      return { ...d, totalHome, bigMacs, bigMacEstimated, pli, flightCostHome };
     })
-    .filter((d) => isFinite(d.totalHome) && isFinite(d.bigMacs) && passesCommonFilters(d, f, d.totalHome))
-    .sort((a, b) =>
-      // With flights included, total trip cost (accommodation+flight) is the more
-      // meaningful ranking than pure local purchasing power - flip the sort key.
-      f.includeFlights ? a.totalHome - b.totalHome : b.bigMacs - a.bigMacs
-    );
+    .filter((d) => isFinite(d.totalHome) && passesCommonFilters(d, f, d.totalHome))
+    .sort((a, b) => {
+      if (f.includeFlights) return a.totalHome - b.totalHome; // total trip cost dominates once flights are in
+      if (index === "pli") return (a.pli ?? Infinity) - (b.pli ?? Infinity); // lower PLI = cheaper
+      return b.bigMacs - a.bigMacs; // more burgers for your money = cheaper for you
+    });
 }
 
 export function rankBiggestMovers(

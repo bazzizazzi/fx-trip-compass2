@@ -11,6 +11,22 @@ export function isBigMacEstimated(currencyCode: string): boolean {
   return PRICES[currencyCode]?.source === "gdp-estimated";
 }
 
+// ---- Second index: Eurostat Restaurants & Hotels PLI (EU=100, Europe-only) ----
+import pliData from "../data/pli.json";
+type PliEntry = { pli: number; source: string; countryEn: string };
+const PLI: Record<string, PliEntry> = (pliData as { values: Record<string, PliEntry> }).values;
+
+export function hasPliData(countryCode: string): boolean {
+  return PLI[countryCode] != null;
+}
+
+/** Lower = cheaper than the EU average. This is a relative index, not a per-person amount - no FX math needed, it's already normalized. */
+export function getPli(countryCode: string): number | null {
+  return PLI[countryCode]?.pli ?? null;
+}
+
+export type PurchasingPowerIndex = "bigmac" | "pli";
+
 /**
  * How many Big Macs does a fixed amount of home currency buy in the destination?
  * Uses the SAME USD-pivot, full-precision convention as fx.ts - rates here are
