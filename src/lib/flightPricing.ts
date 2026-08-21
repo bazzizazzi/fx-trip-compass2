@@ -19,6 +19,7 @@ export async function fetchFlightEstimate(params: {
   checkin: string;
   checkout: string;
   adults: number;
+  minStars: number;
 }): Promise<FlightAvailability> {
   try {
     const qs = new URLSearchParams(params as unknown as Record<string, string>);

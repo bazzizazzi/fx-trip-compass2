@@ -127,3 +127,61 @@ session cuts off mid-way. Work through in THIS order:
 - noindex meta tag: still correctly not needed - no provider content renders on any public
   page yet (Viator integration is backend-only, nothing surfaced in the UI).
 
+
+## Session 5 (2026-08-19/20) - bug fixes + index-picker removal + composite score roadmap
+
+- [x] FIXED real bug: flight-toggle capability probe was missing the `minStars` param
+      required by server validation, causing a 400 error that got misread as "flights
+      available" -> toggle showed enabled with zero real data -> empty results. Now only
+      treats `available === true` as available; probe sends all required params.
+- [x] FIXED hidden-gem ratio: 11 countries (Vietnam, Indonesia, Cambodia, Laos, Nepal,
+      Kenya, Tanzania, Egypt, Morocco, India, Philippines) had ZERO non-hidden-gem entries,
+      so any result from them showed 100% "hidden gem" badges. Added one well-known anchor
+      city per country (Hanoi, Ubud, Siem Reap, Vientiane, Pokhara, Mombasa, Dar es Salaam,
+      Alexandria, Fez, Jaipur, Cebu City). Overall ratio now 50 hidden : 20 anchor (2.5:1) -
+      user wanted 5:1 to 10:1; I prioritized fixing the "100% hidden gem per country" bug
+      over hitting the exact overall ratio. If user wants the ratio pushed further, add
+      MORE hidden-gem entries (not fewer anchors) to dilute back toward 5:1+.
+- [x] REMOVED the index-picker UI entirely per explicit user instruction ("STUPID... remove
+      it"). Reverted "cheapest now" to single Big Mac Index metric only (as it was before
+      the picker was added). IndexPicker.tsx component file still exists but is unused -
+      safe to delete in a future cleanup pass, not currently imported anywhere.
+- [x] Added /methodology page (footer-linked next to Terms/Privacy, all 4 languages) -
+      HONEST content: explains Big Mac Index (live) methodology clearly, and explicitly
+      lists the planned weighted composite score with the user's exact weights (Post Office
+      25%, Backpacker Index 25%, World Bank ICP PLI 20%, WEF Hotel Price 15%, Numbeo 10%,
+      Big Mac 5%) as ROADMAP, clearly stating 4 of 6 aren't sourced yet - NOT implemented
+      as if live, because it isn't.
+
+## NEXT MAJOR PROJECT: weighted composite "Score" (user's explicit spec, do not deviate
+## from these weights without asking): Post Office Worldwide Holiday Costs Barometer 25%,
+## Backpacker Index 25%, World Bank ICP Restaurants&Hotels PLI 20%, WEF Hotel Price Index
+## 15%, Numbeo tourism-only components 10%, Big Mac Index 5%. MUST normalize each index to
+## same 0-100 scale before weighting (user was explicit about this - different raw scales
+## would silently distort the blend). MUST show ONLY the final combined score on cards, never
+## per-index breakdown (user explicit). Call it something like "FX Trip Compass Score" or
+## similar - user said generic/branded name is fine, their call which exact name.
+
+Status per component (as of 2026-08-19, verify freshness before trusting):
+- Big Mac Index: DONE, live, real Economist data + labeled GDP estimates for gaps.
+- World Bank ICP / Eurostat Restaurants & Hotels PLI: PARTIAL - real data for 6 countries
+  only (PT/GR/IT/FR/BG/RO) in src/data/pli.json, sourced from Eurostat's 2025 official
+  release + a 2026 Euronews report citing Eurostat. NOT currently used anywhere in the UI
+  (picker removed) - the data file and purchasingPower.ts functions (hasPliData, getPli)
+  still exist, ready to fold into the composite once other components are ready.
+- Post Office Worldwide Holiday Costs Barometer: NOT SOURCED YET. Real UK Post Office
+  annual report/press release, ~40-50 popular tourist destinations, GBP-denominated basket
+  of 10 tourist items. Need to web_search "Post Office Worldwide Holiday Costs Barometer
+  2026" or most recent year, find their press release/report with per-destination figures.
+- Backpacker Index: NOT SOURCED YET. Need to first IDENTIFY the exact canonical source the
+  user means - ask user to confirm/link the specific one if search doesn't turn up an
+  obvious canonical match, rather than guessing.
+- WEF Hotel Price Index: NOT SOURCED YET. Part of WEF's Travel & Tourism Development Index
+  report (PDF), country-level ADR (average daily rate) figures.
+- Numbeo tourism-only components: NOT SOURCED YET. Numbeo has a paid API for bulk access;
+  free tier is limited. Need to check exact free-tier limits/terms first.
+
+DO NOT attempt to approximate/estimate these 4 missing components with GDP regression or
+similar shortcuts. Only add a component to the weighted blend once it has real, citable,
+per-destination data. User was explicit: a composite built on mostly-guessed inputs is
+worse than not having the composite at all.

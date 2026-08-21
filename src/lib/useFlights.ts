@@ -8,11 +8,16 @@ export function useFlightsCapability() {
 
   useEffect(() => {
     let cancelled = false;
-    // Cheap capability probe: any destId works, we only care about `reason`.
-    fetchFlightEstimate({ destId: "d1", checkin: "2027-01-10", checkout: "2027-01-16", adults: 2 }).then(
+    // Cheap capability probe: any destId works. We must send every param the
+    // server validates (destId, checkin, checkout, adults, minStars) or the
+    // request 400s on a missing field - a validation error is NOT the same as
+    // "no provider configured" and must never be misread as "flights available".
+    fetchFlightEstimate({ destId: "d1", checkin: "2027-01-10", checkout: "2027-01-16", adults: 2, minStars: 3 }).then(
       (result) => {
         if (cancelled) return;
-        setAvailable(result.available || result.reason !== "no_provider_configured");
+        // Only a genuine successful response counts as "available" - anything
+        // else (including any error reason) means the toggle stays disabled.
+        setAvailable(result.available === true);
       }
     );
     return () => {
@@ -45,7 +50,7 @@ export function useFlightCosts(
     destinations.forEach((d) => {
       if (costs[d.id] != null || inFlight.current.has(d.id)) return;
       inFlight.current.add(d.id);
-      fetchFlightEstimate({ destId: d.id, checkin, checkout, adults: 2 }).then((result) => {
+      fetchFlightEstimate({ destId: d.id, checkin, checkout, adults: 2, minStars: 3 }).then((result) => {
         inFlight.current.delete(d.id);
         if (result.available) {
           const priceHome = result.estimate.priceUSD * home.fallbackUsdRate; // rough conversion for a UI estimate only

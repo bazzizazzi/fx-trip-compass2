@@ -53,6 +53,7 @@ type Dict = {
   footerDisclosure: string;
   privacyPolicyLink: string;
   termsLink: string;
+  methodologyLink: string;
   liveBadge: string;
   cachedBadge: string;
   fallbackBadge: (asOf: string) => string;
@@ -121,6 +122,7 @@ const dict: Record<Lang, Dict> = {
     footerDisclosure: "\"Cheapest right now\" ranks destinations by purchasing power using a Big Mac Index-style benchmark (The Economist's own published data where available, a GDP-based estimate elsewhere) rather than made-up budget figures. Exchange rates (current and historical) are fetched live from a free, open, daily-updated public rate archive (fawazahmed0/currency-api, served via jsDelivr's CDN, 200+ currencies). If that ever fails to load, the site falls back to a labeled offline snapshot rather than showing silently stale numbers. All conversions pivot through USD at full precision — never rounded mid-calculation. Hotel links go to real Booking.com search results with dates and star class pre-filled; full embedded pricing would require an official Booking.com Affiliate Partner API key.",
     privacyPolicyLink: "Privacy Policy",
     termsLink: "Terms of Service",
+    methodologyLink: "How our indices work",
     liveBadge: "Live rates",
     cachedBadge: "Cached rates",
     fallbackBadge: (asOf) => `Offline snapshot (${asOf})`,
@@ -172,6 +174,7 @@ const dict: Record<Lang, Dict> = {
     footerDisclosure: "\"יעדים זולים עכשיו\" מדורג לפי כוח קנייה, בסגנון מדד ביג מק (נתונים אמיתיים של The Economist היכן שקיימים, הערכה מבוססת תמ\"ג היכן שלא) ולא לפי מספרי תקציב מומצאים. שערי החליפין (נוכחיים והיסטוריים) נמשכים בזמן אמת מארכיון שערים ציבורי חינמי שמתעדכן יומית (fawazahmed0/currency-api, דרך רשת ה-CDN של jsDelivr, מעל 200 מטבעות). אם הטעינה נכשלת, האתר עובר לנתוני גיבוי מתויגים בבירור במקום להציג בשקט מספרים ישנים. כל המרה עוברת דרך דולר ארה\"ב בדיוק מלא — לעולם לא מעוגלת באמצע החישוב. קישורי המלונות מובילים לחיפוש אמיתי ב-Booking.com עם תאריכים ורמת כוכבים ממולאים; תמחור מוטמע מלא ידרוש מפתח API רשמי של Booking.com Affiliate Partner.",
     privacyPolicyLink: "מדיניות פרטיות",
     termsLink: "תנאי שימוש",
+    methodologyLink: "איך המדדים שלנו עובדים",
     liveBadge: "שערים חיים",
     cachedBadge: "שערים שמורים",
     fallbackBadge: (asOf) => `נתוני גיבוי (${asOf})`,
@@ -223,6 +226,7 @@ const dict: Record<Lang, Dict> = {
     footerDisclosure: "\"Más barato ahora mismo\" clasifica los destinos por poder adquisitivo usando un índice estilo Big Mac (datos reales de The Economist donde están disponibles, una estimación basada en el PIB en el resto) en lugar de cifras de presupuesto inventadas. Los tipos de cambio (actuales e históricos) se obtienen en vivo desde un archivo público gratuito actualizado a diario (fawazahmed0/currency-api, servido vía la CDN de jsDelivr, 200+ monedas). Si la carga falla, el sitio usa datos sin conexión claramente etiquetados en vez de mostrar números desactualizados en silencio. Todas las conversiones pasan por el dólar con precisión total, nunca redondeadas a mitad de cálculo. Los enlaces de hoteles llevan a resultados reales de Booking.com con fechas y categoría de estrellas prerrellenadas.",
     privacyPolicyLink: "Política de Privacidad",
     termsLink: "Términos de Servicio",
+    methodologyLink: "Cómo funcionan nuestros índices",
     liveBadge: "Tipos en vivo",
     cachedBadge: "Tipos en caché",
     fallbackBadge: (asOf) => `Datos sin conexión (${asOf})`,
@@ -274,6 +278,7 @@ const dict: Record<Lang, Dict> = {
     footerDisclosure: "Le moins cher en ce moment classe les destinations par pouvoir d'achat selon un indice de type Big Mac (données réelles de The Economist quand disponibles, estimation basée sur le PIB sinon) plutôt que des chiffres de budget inventés. Les taux de change (actuels et historiques) sont récupérés en direct depuis une archive publique gratuite mise à jour quotidiennement (fawazahmed0/currency-api, servie via le CDN de jsDelivr, 200+ devises). En cas d'échec, le site utilise des données hors ligne clairement signalées plutôt que d'afficher silencieusement des chiffres périmés. Toutes les conversions passent par le dollar à pleine précision — jamais arrondies en cours de calcul. Les liens d'hôtels mènent à de vrais résultats Booking.com avec dates et catégorie d'étoiles pré-remplies.",
     privacyPolicyLink: "Politique de confidentialité",
     termsLink: "Conditions d'utilisation",
+    methodologyLink: "Comment fonctionnent nos indices",
     liveBadge: "Taux en direct",
     cachedBadge: "Taux en cache",
     fallbackBadge: (asOf) => `Instantané hors ligne (${asOf})`,
