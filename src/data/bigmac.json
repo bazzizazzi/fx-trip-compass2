@@ -366,6 +366,11 @@
       "localPrice": 269.5661,
       "source": "gdp-estimated",
       "countryName": null
+    },
+    "XOF": {
+      "localPrice": 1878.2535,
+      "source": "gdp-estimated",
+      "countryName": null
     }
   }
 }
