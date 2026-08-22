@@ -4,22 +4,16 @@
 🌀 Building list of assets...
 ✨ Read 6 files from the assets directory /home/runner/work/fx-trip-compass2/fx-trip-compass2/dist
 🌀 Starting asset upload...
-🌀 Found 2 new or modified static assets to upload. Proceeding with upload...
-+ /index.html
-+ /assets/index-CUVquqV3.js
-Uploaded 1 of 2 assets
-Uploaded 2 of 2 assets
-✨ Success! Uploaded 2 files (3 already uploaded) (1.45 sec)
-
-Total Upload: 74.56 KiB / gzip: 12.90 KiB
+No updated asset files to upload. Proceeding with deployment...
+Total Upload: 93.65 KiB / gzip: 15.49 KiB
 Worker Startup Time: 4 ms
 Your Worker has access to the following bindings:
 Binding            Resource      
 env.ASSETS         Assets        
 
-Uploaded fx-trip-compass2 (10.05 sec)
-Deployed fx-trip-compass2 triggers (2.78 sec)
+Uploaded fx-trip-compass2 (3.22 sec)
+Deployed fx-trip-compass2 triggers (0.84 sec)
   https://fx-trip-compass2.bazzizazzi.workers.dev
-Current Version ID: 3182ac3a-f725-4f4d-99e4-36d127b366bf
+Current Version ID: b104a84c-2e84-4409-a93f-c4022ef83db6
 
 Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
