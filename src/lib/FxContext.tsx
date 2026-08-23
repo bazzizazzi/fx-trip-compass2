@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { fetchCurrentRates, fetchHistoricalRates, dateYearsAgo, type RatesSnapshot } from "./fxLive";
 
 type HistState = Record<number, RatesSnapshot | null | "loading">;
@@ -16,7 +16,11 @@ export function FxProvider({ children }: { children: ReactNode }) {
   const [current, setCurrent] = useState<RatesSnapshot | null>(null);
   const [currentLoading, setCurrentLoading] = useState(true);
   const [historical, setHistorical] = useState<HistState>({});
-  const inFlight = useRef<Set<number>>(new Set());
+  // Tracks every year we've EVER attempted (loading, success, OR failure) so a
+  // failed fetch (historical[years] === null) is never silently falsy-retried.
+  // A ref (not state) so this check is stable across renders without needing
+  // `historical` in any dependency array.
+  const attempted = useRef<Set<number>>(new Set());
 
   useEffect(() => {
     let cancelled = false;
@@ -31,15 +35,14 @@ export function FxProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  function ensureHistorical(years: number) {
-    if (historical[years] || inFlight.current.has(years)) return;
-    inFlight.current.add(years);
+  const ensureHistorical = useCallback((years: number) => {
+    if (attempted.current.has(years)) return;
+    attempted.current.add(years);
     setHistorical((h) => ({ ...h, [years]: "loading" }));
     fetchHistoricalRates(dateYearsAgo(years)).then((snap) => {
-      inFlight.current.delete(years);
       setHistorical((h) => ({ ...h, [years]: snap }));
     });
-  }
+  }, []);
 
   return (
     <FxContext.Provider value={{ current, currentLoading, historical, ensureHistorical }}>

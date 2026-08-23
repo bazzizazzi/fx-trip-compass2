@@ -28,7 +28,6 @@ export default function DestinationCard({ dest, homeCurrency, currentRates, past
   const home = getCurrencyMeta(homeCurrency);
   const totalUsd = dest.avgDailyBudgetUSD * days;
   const totalHome = usdToHome(currentRates, totalUsd, homeCurrency);
-  const monthMatch = dest.bestMonths.includes(month);
   const movementPct = pastRates ? fxMovementPct(currentRates, pastRates, homeCurrency, dest.currencyCode) : null;
 
   const { checkin, checkout } = dateRangeForMonth(month, days);
@@ -40,7 +39,6 @@ export default function DestinationCard({ dest, homeCurrency, currentRates, past
   const name = lang === "he" ? dest.name : dest.nameEn;
   const country = lang === "he" ? dest.country : (t.countries[dest.countryCode] ?? dest.countryEn);
   const description = lang === "he" ? dest.description : dest.descriptionEn;
-  const monthName = t.months[month - 1];
 
   return (
     <article className="group bg-card border border-ink/10 rounded-2xl overflow-hidden flex flex-col hover:shadow-[0_8px_30px_-10px_rgba(22,35,59,0.25)] hover:-translate-y-0.5 transition-all duration-200">
@@ -51,11 +49,6 @@ export default function DestinationCard({ dest, homeCurrency, currentRates, past
         {dest.hiddenGem && (
           <span className="absolute top-3 start-3 inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-card/95 text-gold-deep shadow-sm backdrop-blur-sm">
             <Sparkles size={11} /> {t.hiddenGemBadge}
-          </span>
-        )}
-        {monthMatch && (
-          <span className="absolute top-3 end-3 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-emerald text-white shadow-sm">
-            {t.seasonBadge(monthName)}
           </span>
         )}
       </div>
