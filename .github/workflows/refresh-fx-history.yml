@@ -1,0 +1,25 @@
+name: Refresh historical FX snapshots
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 4 1 * *" # 1st of each month
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/fetch-historical-fx.mjs
+      - name: Commit updated snapshot
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add src/data/historical-fx.json
+          git diff --cached --quiet && echo "No changes" || git commit -m "chore: refresh historical FX snapshots"
+          git push
