@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import Hero from "./components/Hero";
 import Tabs from "./components/Tabs";
 import FilterBar, { type Filters } from "./components/FilterBar";
@@ -11,6 +11,7 @@ import { currentMonth } from "./lib/months";
 import { rankCheapestNow, rankBiggestMovers } from "./lib/rank";
 import { useI18n } from "./lib/i18n";
 import { useFx } from "./lib/FxContext";
+import { AVAILABLE_HISTORY_YEARS } from "./lib/FxContext";
 import { useFlightsCapability, useFlightCosts } from "./lib/useFlights";
 import { dateRangeForMonth } from "./lib/months";
 import { ShieldAlert, Info } from "lucide-react";
@@ -19,7 +20,7 @@ const STORAGE_KEY = "fxtrip.home_country";
 
 export default function App() {
   const { t } = useI18n();
-  const { current, currentLoading, historical, ensureHistorical } = useFx();
+  const { current, currentLoading, getHistorical } = useFx();
 
   const [homeCountryCode, setHomeCountryCode] = useState<string>(() => {
     return localStorage.getItem(STORAGE_KEY) || "US";
@@ -28,7 +29,7 @@ export default function App() {
   const homeCurrency = homeCountry.currency;
 
   const [tab, setTab] = useState<"cheap" | "movers">("cheap");
-  const [years, setYears] = useState(1);
+  const [years, setYears] = useState(AVAILABLE_HISTORY_YEARS[0] ?? 1);
   const [filters, setFilters] = useState<Filters>({
     month: currentMonth(),
     days: 6,
@@ -55,15 +56,11 @@ export default function App() {
     localStorage.setItem(STORAGE_KEY, code);
   }
 
-  useEffect(() => {
-    if (tab === "movers") ensureHistorical(years);
-  }, [tab, years, ensureHistorical]);
-
   const totalCount = useMemo(() => allDestinations().length, []);
   const excludedCount = totalCount - visible.length;
 
-  const pastSnap = historical[years];
-  const pastRates = pastSnap && pastSnap !== "loading" ? pastSnap.rates : null;
+  const pastSnap = useMemo(() => getHistorical(years), [getHistorical, years]);
+  const pastRates = pastSnap?.rates ?? null;
 
   const cheapResults = useMemo(() => {
     if (!current) return [];
@@ -76,8 +73,10 @@ export default function App() {
   }, [visible, current, pastRates, homeCurrency, filters]);
 
   const results = tab === "cheap" ? cheapResults : moverResults;
-  const moversLoading = tab === "movers" && (pastSnap === "loading" || pastSnap === undefined);
-  const moversFailed = tab === "movers" && pastSnap === null;
+  // Historical is a static file now - "loading" never applies to it, only the
+  // always-live "current" rates fetch can still be loading.
+  const moversLoading = tab === "movers" && currentLoading;
+  const moversFailed = tab === "movers" && !currentLoading && pastSnap === null;
 
   return (
     <div className="min-h-screen">
@@ -98,12 +97,12 @@ export default function App() {
             active={tab}
             onChange={(id) => setTab(id as "cheap" | "movers")}
           />
-          <LiveDataBadge snapshot={tab === "cheap" ? current : (pastSnap && pastSnap !== "loading" ? pastSnap : current)} />
+          <LiveDataBadge snapshot={tab === "cheap" ? current : (pastSnap ? { rates: pastSnap.rates, asOf: pastSnap.actualDate, source: "live" } : current)} />
         </div>
 
         {tab === "movers" && (
           <div className="mt-4 space-y-3">
-            <YearSlider years={years} onChange={setYears} label={t.moversSliderLabel} unit={t.moversYearsUnit} />
+            <YearSlider years={years} onChange={setYears} label={t.moversSliderLabel} unit={t.moversYearsUnit} steps={AVAILABLE_HISTORY_YEARS} />
             <p className="text-xs text-muted leading-relaxed">{t.moversNoHistoryNote}</p>
           </div>
         )}

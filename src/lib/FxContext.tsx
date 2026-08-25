@@ -1,13 +1,35 @@
-import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
-import { fetchCurrentRates, fetchHistoricalRates, dateYearsAgo, type RatesSnapshot } from "./fxLive";
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { fetchCurrentRates, type RatesSnapshot } from "./fxLive";
+import historicalData from "../data/historical-fx.json";
 
-type HistState = Record<number, RatesSnapshot | null | "loading">;
+type HistoricalSnapshot = { date: string; rates: Record<string, number> };
+type HistoricalFile = {
+  generatedAt: string;
+  source: string;
+  base: string;
+  snapshots: Record<string, HistoricalSnapshot>;
+};
+
+const HISTORICAL = historicalData as HistoricalFile;
+
+/** Which yearly lookback points actually have data - drives the slider's available steps. */
+export const AVAILABLE_HISTORY_YEARS: number[] = Object.keys(HISTORICAL.snapshots)
+  .map(Number)
+  .sort((a, b) => a - b);
+
+export const HISTORICAL_SOURCE = HISTORICAL.source;
+export const HISTORICAL_GENERATED_AT = HISTORICAL.generatedAt;
 
 type Ctx = {
   current: RatesSnapshot | null;
   currentLoading: boolean;
-  historical: HistState;
-  ensureHistorical: (years: number) => void;
+  /**
+   * Historical data is a STATIC file (see scripts/fetch-historical-fx.mjs,
+   * refreshed monthly via .github/workflows/refresh-fx-history.yml) - this is
+   * a synchronous lookup, never a network call. No loading state, no retry
+   * logic needed, and nothing to flicker: it's either in the file or it isn't.
+   */
+  getHistorical: (years: number) => (RatesSnapshot & { actualDate: string }) | null;
 };
 
 const FxContext = createContext<Ctx | null>(null);
@@ -15,12 +37,6 @@ const FxContext = createContext<Ctx | null>(null);
 export function FxProvider({ children }: { children: ReactNode }) {
   const [current, setCurrent] = useState<RatesSnapshot | null>(null);
   const [currentLoading, setCurrentLoading] = useState(true);
-  const [historical, setHistorical] = useState<HistState>({});
-  // Tracks every year we've EVER attempted (loading, success, OR failure) so a
-  // failed fetch (historical[years] === null) is never silently falsy-retried.
-  // A ref (not state) so this check is stable across renders without needing
-  // `historical` in any dependency array.
-  const attempted = useRef<Set<number>>(new Set());
 
   useEffect(() => {
     let cancelled = false;
@@ -35,17 +51,14 @@ export function FxProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  const ensureHistorical = useCallback((years: number) => {
-    if (attempted.current.has(years)) return;
-    attempted.current.add(years);
-    setHistorical((h) => ({ ...h, [years]: "loading" }));
-    fetchHistoricalRates(dateYearsAgo(years)).then((snap) => {
-      setHistorical((h) => ({ ...h, [years]: snap }));
-    });
-  }, []);
+  function getHistorical(years: number): (RatesSnapshot & { actualDate: string }) | null {
+    const snap = HISTORICAL.snapshots[String(years)];
+    if (!snap) return null;
+    return { rates: snap.rates, asOf: snap.date, source: "live", actualDate: snap.date };
+  }
 
   return (
-    <FxContext.Provider value={{ current, currentLoading, historical, ensureHistorical }}>
+    <FxContext.Provider value={{ current, currentLoading, getHistorical }}>
       {children}
     </FxContext.Provider>
   );
