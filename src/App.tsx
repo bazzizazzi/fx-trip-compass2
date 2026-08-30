@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import Tabs from "./components/Tabs";
 import FilterBar, { type Filters } from "./components/FilterBar";
 import DestinationCard from "./components/DestinationCard";
-import YearSlider from "./components/YearSlider";
+import MonthSlider from "./components/MonthSlider";
 import LiveDataBadge from "./components/LiveDataBadge";
 import { HOME_COUNTRIES, visibleDestinationsFor, allDestinations } from "./lib/destinations";
 import { getCurrencyMeta } from "./lib/fx";
@@ -11,7 +11,7 @@ import { currentMonth } from "./lib/months";
 import { rankCheapestNow, rankBiggestMovers } from "./lib/rank";
 import { useI18n } from "./lib/i18n";
 import { useFx } from "./lib/FxContext";
-import { AVAILABLE_HISTORY_YEARS } from "./lib/FxContext";
+import { AVAILABLE_HISTORY_MONTHS } from "./lib/FxContext";
 import { useFlightsCapability, useFlightCosts } from "./lib/useFlights";
 import { dateRangeForMonth } from "./lib/months";
 import { ShieldAlert, Info } from "lucide-react";
@@ -29,7 +29,9 @@ export default function App() {
   const homeCurrency = homeCountry.currency;
 
   const [tab, setTab] = useState<"cheap" | "movers">("cheap");
-  const [years, setYears] = useState(AVAILABLE_HISTORY_YEARS[0] ?? 1);
+  const [monthKey, setMonthKey] = useState<string>(
+    () => AVAILABLE_HISTORY_MONTHS[Math.max(0, AVAILABLE_HISTORY_MONTHS.length - 12)] ?? AVAILABLE_HISTORY_MONTHS[0] ?? ""
+  ); // default ~1 year back
   const [filters, setFilters] = useState<Filters>({
     month: currentMonth(),
     days: 6,
@@ -59,7 +61,7 @@ export default function App() {
   const totalCount = useMemo(() => allDestinations().length, []);
   const excludedCount = totalCount - visible.length;
 
-  const pastSnap = useMemo(() => getHistorical(years), [getHistorical, years]);
+  const pastSnap = useMemo(() => getHistorical(monthKey), [getHistorical, monthKey]);
   const pastRates = pastSnap?.rates ?? null;
 
   const cheapResults = useMemo(() => {
@@ -102,7 +104,7 @@ export default function App() {
 
         {tab === "movers" && (
           <div className="mt-4 space-y-3">
-            <YearSlider years={years} onChange={setYears} label={t.moversSliderLabel} unit={t.moversYearsUnit} steps={AVAILABLE_HISTORY_YEARS} />
+            <MonthSlider monthKey={monthKey} onChange={setMonthKey} label={t.moversSliderLabel} months={AVAILABLE_HISTORY_MONTHS} />
             <p className="text-xs text-muted leading-relaxed">{t.moversNoHistoryNote}</p>
           </div>
         )}
